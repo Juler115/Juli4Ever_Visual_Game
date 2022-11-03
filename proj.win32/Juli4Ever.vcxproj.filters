@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.cpp">
+      <Filter>Source Files\proj.win32</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\precheader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.h">
+      <Filter>Source Files\proj.win32</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\resource.h">
+      <Filter>Source Files\proj.win32</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\CloseNormal.png">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\CloseSelected.png">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\HelloWorld.png">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\fonts\Marker Felt.ttf">
+      <Filter>Resources\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\fonts\arial.ttf">
+      <Filter>Resources\fonts</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\res\.gitkeep">
+      <Filter>Resources\res</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\game.rc">
+      <Filter>Source Files\proj.win32</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{5D7BA73E-5A2A-3996-B083-3B1067415F07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\fonts">
+      <UniqueIdentifier>{3C898D89-08AE-3D32-82B4-FB6541162E8F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\res">
+      <UniqueIdentifier>{07041592-24FF-30B9-9704-38C609E0432F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AE19B724-849C-3189-BBA1-1B40A660BE0A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes">
+      <UniqueIdentifier>{AB4BB9C9-6E95-34B3-930B-D8ED76D4F345}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\proj.win32">
+      <UniqueIdentifier>{7F6F86DC-211C-3203-8355-A62FBFE2287A}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

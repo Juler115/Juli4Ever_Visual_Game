@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\8070221b01795f046cadeb4902e298e0\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{17FC3492-E3AB-393E-ACD5-10E35CF46E14}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

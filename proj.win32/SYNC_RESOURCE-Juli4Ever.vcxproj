@@ -1,0 +1,295 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0267B9E5-9DB2-3C19-9916-F7517D43B3F5}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>Win32</Platform>
+    <ProjectName>SYNC_RESOURCE-Juli4Ever</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "    copying to C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\Juler\Documents\hacking\python\python.exe C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cmake/scripts/sync_folder.py -s C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/Resources -d C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "    copying to C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\Juler\Documents\hacking\python\python.exe C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cmake/scripts/sync_folder.py -s C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/Resources -d C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "    copying to C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\Juler\Documents\hacking\python\python.exe C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cmake/scripts/sync_folder.py -s C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/Resources -d C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message></Message>
+      <Command>setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "    copying to C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources"
+if %errorlevel% neq 0 goto :cmEnd
+C:\Users\Juler\Documents\hacking\python\python.exe C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cmake/scripts/sync_folder.py -s C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/Resources -d C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/$(Configuration)/Resources
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\8070221b01795f046cadeb4902e298e0\SYNC_RESOURCE-Juli4Ever.rule">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "Copying resources for Juli4Ever ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\SYNC_RESOURCE-Juli4Ever</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "Copying resources for Juli4Ever ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\SYNC_RESOURCE-Juli4Ever</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "Copying resources for Juli4Ever ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\SYNC_RESOURCE-Juli4Ever</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</VerifyInputsAndOutputsExist>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'"></Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -E echo "Copying resources for Juli4Ever ..."
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\SYNC_RESOURCE-Juli4Ever</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+      <VerifyInputsAndOutputsExist Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</VerifyInputsAndOutputsExist>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildSet.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDefine.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDepend.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCXXCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeRCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompilerABI.c;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCompilerIdDetection.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompileFeatures.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerABI.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerId.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeFindBinUtils.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseArguments.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseLibraryArchitecture.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystem.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCompilerCommon.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CompilerId\VS-10.vcxproj.in;D:\Aplicaciones\share\cmake-3.24\Modules\Internal\FeatureTesting.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-Determine-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildSet.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDefine.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDepend.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCXXCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeRCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompilerABI.c;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCompilerIdDetection.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompileFeatures.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerABI.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerId.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeFindBinUtils.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseArguments.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseLibraryArchitecture.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystem.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCompilerCommon.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CompilerId\VS-10.vcxproj.in;D:\Aplicaciones\share\cmake-3.24\Modules\Internal\FeatureTesting.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-Determine-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildSet.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDefine.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDepend.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCXXCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeRCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompilerABI.c;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCompilerIdDetection.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompileFeatures.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerABI.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerId.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeFindBinUtils.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseArguments.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseLibraryArchitecture.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystem.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCompilerCommon.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CompilerId\VS-10.vcxproj.in;D:\Aplicaciones\share\cmake-3.24\Modules\Internal\FeatureTesting.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-Determine-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildHelpers.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosBuildSet.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDefine.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cmake\Modules\CocosConfigDepend.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeCXXCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeRCCompiler.cmake;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\3.24.1\CMakeSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCCompilerABI.c;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXCompilerABI.cpp;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCXXInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCommonLanguageInclude.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeCompilerIdDetection.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompileFeatures.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerABI.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineCompilerId.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeDetermineSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeFindBinUtils.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeGenericSystem.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeInitializeConfigs.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeLanguageInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseArguments.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitIncludeInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseImplicitLinkInfo.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeParseLibraryArchitecture.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCCompiler.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeRCInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystem.cmake.in;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInformation.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeSystemSpecificInitialize.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCXXCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestCompilerCommon.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CMakeTestRCCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ADSP-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMCC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\ARMClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\AppleClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Borland-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\CMakeCommonCompilerMacros.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Cray-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\FujitsuClang-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GHS-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IAR-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IBMClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Intel-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\IntelLLVM-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\LCC-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVHPC-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PGI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\PathScale-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SCO-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TI-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\Watcom-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\XLClang-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-C-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\CompilerId\VS-10.vcxproj.in;D:\Aplicaciones\share\cmake-3.24\Modules\Internal\FeatureTesting.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-Determine-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-C.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC-CXX.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows-MSVC.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\Windows.cmake;D:\Aplicaciones\share\cmake-3.24\Modules\Platform\WindowsPaths.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\CMakeFiles\SYNC_RESOURCE-Juli4Ever">
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\ZERO_CHECK.vcxproj">
+      <Project>{192EC7AB-8CD9-3418-8994-7C8DD2943A25}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

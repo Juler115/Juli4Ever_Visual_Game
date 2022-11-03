@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PreferredToolArchitecture>x64</PreferredToolArchitecture>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ResolveNugetPackages>false</ResolveNugetPackages>
+  </PropertyGroup>
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{069F1B11-6D09-3663-8C70-FE7E21B7F5A6}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\CMakeLists.txt">
+      <UseUtf8Encoding>Always</UseUtf8Encoding>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\base\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\math\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\network\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\base\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\math\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\network\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\base\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\math\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\network\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/cocos/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+D:\Aplicaciones\bin\cmake.exe -SC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever -BC:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32 --check-stamp-file C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/engine/cocos/core/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\2d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\audio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\base\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\editor-support\cocostudio\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\math\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\navmesh\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\network\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\physics3d\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\platform\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\renderer\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\ui\CMakeLists.txt;C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\extensions\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\cocos\core\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\ZERO_CHECK.vcxproj">
+      <Project>{192EC7AB-8CD9-3418-8994-7C8DD2943A25}</Project>
+      <Name>ZERO_CHECK</Name>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\cocos\core\cocos2d.vcxproj">
+      <Project>{DD20DCFE-2CA9-347C-AE43-B3876FDACE46}</Project>
+      <Name>cocos2d</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\clipper\ext_clipper.vcxproj">
+      <Project>{CD2B9977-7DDE-398E-90A7-AC2EA3A3FFFF}</Project>
+      <Name>ext_clipper</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\ConvertUTF\ext_convertUTF.vcxproj">
+      <Project>{6B4EF041-AB35-3773-8B4D-72A43857793C}</Project>
+      <Name>ext_convertUTF</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\edtaa3func\ext_edtaa3func.vcxproj">
+      <Project>{F88C1224-4A19-3C64-BE4F-32C3B5E71E73}</Project>
+      <Name>ext_edtaa3func</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\md5\ext_md5.vcxproj">
+      <Project>{0E4C7148-264E-3405-B227-F45F219784C5}</Project>
+      <Name>ext_md5</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\poly2tri\ext_poly2tri.vcxproj">
+      <Project>{D2006985-E3F8-3E45-9FC8-5EFB4966DB9D}</Project>
+      <Name>ext_poly2tri</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\recast\ext_recast.vcxproj">
+      <Project>{EEA42EC4-2D6E-3ED2-8707-7DEA6511A366}</Project>
+      <Name>ext_recast</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\tinyxml2\ext_tinyxml2.vcxproj">
+      <Project>{29016DC5-716C-31FB-A1C3-C731003D244F}</Project>
+      <Name>ext_tinyxml2</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\unzip\ext_unzip.vcxproj">
+      <Project>{77074E4F-55B1-30D2-BE59-170435F98C7A}</Project>
+      <Name>ext_unzip</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\xxhash\ext_xxhash.vcxproj">
+      <Project>{DF67118F-E585-32E9-ADF8-2CC47AA2DACA}</Project>
+      <Name>ext_xxhash</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\xxtea\ext_xxtea.vcxproj">
+      <Project>{08027777-54A6-35B0-8CDF-4640686D2232}</Project>
+      <Name>ext_xxtea</Name>
+    </ProjectReference>
+    <ProjectReference Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\engine\external\external.vcxproj">
+      <Project>{8FBB02AC-A64D-37C0-9CC3-2F9EFBFDFEC6}</Project>
+      <Name>external</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
