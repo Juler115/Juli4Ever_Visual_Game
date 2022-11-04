@@ -117,14 +117,28 @@ bool HelloWorld::init()
     }
     return true;
 }*/
-    auto prueba = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-    prueba->setString("Primera Prueba");
-    prueba->setPosition(100, 100);
-        this->addChild(prueba, 1);
 
-    auto dial = Sprite::create("Utils/blueStextbox.png");
-    dial->setPosition(100,100);
-        this->addChild(dial, 0);
+    auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    this->addChild(back, 0);
+
+        auto prueba = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+        prueba->setString("Primera Prueba");
+        prueba->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+        this->addChild(prueba, 2);
+        auto dial = Sprite::create("Utils/blueStextbox.png");
+        dial->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+        this->addChild(dial, 1);
+
+    auto l = Sprite::create("Juli_sprites/Poses/1l.png");
+    l->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(l, 3);
+    auto r = Sprite::create("Juli_sprites/Poses/1r.png");
+    r->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(r, 4);
+    auto c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
+    c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(c, 5);
 
     return true;
 }
