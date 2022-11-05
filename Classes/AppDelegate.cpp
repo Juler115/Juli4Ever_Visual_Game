@@ -71,16 +71,20 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // initialize director
     auto director = Director::getInstance();
     auto glview = director->getOpenGLView();
-    if(!glview) {
+
+    if (!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithFullScreen("Juli4Ever");
-        //glview = GLViewImpl::create("Juli4Ever");
+        //glview = GLViewImpl::createWithFullScreen("Juli4Ever");
+        glview = GLViewImpl::createWithRect("Juli4EVer", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview->setFrameSize(1920, 1080);
+#else
+        glview = GLViewImpl::create("FirstGame");
 #endif
         director->setOpenGLView(glview);
     }
 
     // turn on display FPS
-    director->setDisplayStats(true);
+   // director->setDisplayStats(true);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     director->setAnimationInterval(1.0f / 60);

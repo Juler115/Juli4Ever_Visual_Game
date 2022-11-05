@@ -137,7 +137,7 @@ bool HelloWorld::init()
     r->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
         this->addChild(r, 4);
     auto c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+    c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
         this->addChild(c, 5);
 
     return true;
