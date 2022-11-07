@@ -59,7 +59,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\bin\Juli4Ever\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Juli4Ever.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Juli4Ever</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.exe</TargetExt>
@@ -83,6 +82,9 @@
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">true</GenerateManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\bin\Juli4Ever\Debug</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -117,7 +119,8 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 D:\Aplicaciones\bin\cmake.exe -E copy_if_different C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/Debug/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -283,7 +286,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 D:\Aplicaciones\bin\cmake.exe -E copy_if_different C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/Release/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -449,7 +453,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 D:\Aplicaciones\bin\cmake.exe -E copy_if_different C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/MinSizeRel/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -614,7 +619,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <PostBuildEvent>
-      <Message>												</Message>
+      <Message>
+      </Message>
       <Command>setlocal
 D:\Aplicaciones\bin\cmake.exe -E copy_if_different C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/cocos2d/external/openssl/prebuilt/win32/libssl-1_1.dll C:/Users/Juler/Documents/July/Juli/Juli4ever_Game/Juli4Ever/proj.win32/bin/Juli4Ever/RelWithDebInfo/libssl-1_1.dll
 if %errorlevel% neq 0 goto :cmEnd
@@ -805,13 +811,30 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cambio.cpp" />
+    <ClCompile Include="Conocer.cpp" />
+    <ClCompile Include="Datos.cpp" />
+    <ClCompile Include="Decir.cpp" />
+    <ClCompile Include="Greetings.cpp" />
+    <ClCompile Include="Gustar.cpp" />
+    <ClCompile Include="Hablar.cpp" />
+    <ClCompile Include="Jugar.cpp" />
+    <ClCompile Include="Musica.cpp" />
+    <ClCompile Include="Preguntar.cpp" />
+    <ClCompile Include="Preguntas.cpp" />
+    <ClCompile Include="Sentimientos.cpp" />
+    <ClCompile Include="Siento.cpp" />
+    <ClCompile Include="Threats.cpp" />
+    <ClCompile Include="Vacas y toros.cpp" />
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.h" />
-    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.h" />
+    <ClInclude Include="..\Classes\Juli4Ever.h" />
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.h" />
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\resource.h" />
     <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.cpp" />
-    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.cpp" />
+    <ClCompile Include="..\Classes\Juli4Ever.cpp" />
     <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.cpp" />
+    <ClInclude Include="Functions.h" />
+    <ClInclude Include="Juli.h" />
     <ResourceCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\game.rc" />
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\CloseNormal.png" />
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\CloseSelected.png" />

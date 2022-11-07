@@ -4,21 +4,63 @@
     <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.cpp">
-      <Filter>Source Files\Classes</Filter>
-    </ClCompile>
     <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
     <ClCompile Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Cambio.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Conocer.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Datos.cpp">
+      <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Decir.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Greetings.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Gustar.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Hablar.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Jugar.cpp">
+      <Filter>Source Files\Juli4Ever\Jugar</Filter>
+    </ClCompile>
+    <ClCompile Include="Musica.cpp">
+      <Filter>Source Files\Juli4Ever\Musica</Filter>
+    </ClCompile>
+    <ClCompile Include="Preguntar.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Preguntas.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Sentimientos.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Siento.cpp">
+      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Threats.cpp">
+      <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Vacas y toros.cpp">
+      <Filter>Source Files\Juli4Ever\Jugar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Juli4Ever.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\HelloWorldScene.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\proj.win32\main.h">
@@ -44,6 +86,15 @@
     </ClInclude>
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="Functions.h">
+      <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Juli.h">
+      <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Juli4Ever.h">
+      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -72,6 +123,21 @@
     </Filter>
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{7F6F86DC-211C-3203-8355-A62FBFE2287A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Juli4Ever">
+      <UniqueIdentifier>{cd82e133-1188-4746-bd4b-d43dfdb84d2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Juli4Ever\Musica">
+      <UniqueIdentifier>{6e4c6e0d-4561-44a2-9c72-9ea8592a9612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Juli4Ever\Hablar">
+      <UniqueIdentifier>{cff0aac3-e592-41b7-87a4-5ab707ec1bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Juli4Ever\Jugar">
+      <UniqueIdentifier>{8c876e79-c5db-40b7-b48a-0a2a4c679264}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Juli4Ever\Utils">
+      <UniqueIdentifier>{894c9d72-0f3b-4428-bba7-16e2da1c7df7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
