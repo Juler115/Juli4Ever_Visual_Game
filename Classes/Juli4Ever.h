@@ -41,6 +41,10 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(Juli4Ever);
+private:
+    cocos2d::Sprite* _l;
+    cocos2d::Sprite* _r;
+    cocos2d::Sprite* _c;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

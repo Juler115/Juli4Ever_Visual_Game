@@ -53,58 +53,29 @@ bool Juli4Ever::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    /////////////////////////////
-    // 2. add a menu item with "X" image, which is clicked to quit the program
-    //    you may modify it.
-
-    // add a "close" icon to exit the progress. it's an autorelease object
-    auto closeItem = MenuItemImage::create(
-        "CloseNormal.png",
-        "CloseSelected.png",
-        CC_CALLBACK_1(Juli4Ever::menuCloseCallback, this));
-    Label prueba1;
-    prueba1.setString("Prueba1");
-
-    if (closeItem == nullptr ||
-        closeItem->getContentSize().width <= 0 ||
-        closeItem->getContentSize().height <= 0)
-    {
-        problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
-    }
-    else
-    {
-        float x = origin.x + visibleSize.width - closeItem->getContentSize().width / 2;
-        float y = origin.y + closeItem->getContentSize().height / 2;
-        closeItem->setPosition(Vec2(x, y));
-    }
-    // create menu, it's an autorelease object
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(Vec2::ZERO);
-    this->addChild(menu, 1);
-
 
 
     auto back = Sprite::create("Utils/daylight_Background.png");
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-        auto prueba = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-        prueba->setString("Primera Prueba");
+        auto prueba = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 12);
+        prueba->setString(Bienvenida());
         prueba->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
         this->addChild(prueba, 2);
         auto dial = Sprite::create("Utils/blueStextbox.png");
         dial->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
         this->addChild(dial, 1);
 
-    auto l = Sprite::create("Juli_sprites/Poses/1l.png");
-    l->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
-        this->addChild(l, 3);
-    auto r = Sprite::create("Juli_sprites/Poses/1r.png");
-    r->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
-        this->addChild(r, 4);
-    auto c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
-        this->addChild(c, 5);
+    _l = Sprite::create("Juli_sprites/Poses/1l.png");
+    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+    _r = Sprite::create("Juli_sprites/Poses/1r.png");
+    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+    _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
+    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
 
     return true;
 }
