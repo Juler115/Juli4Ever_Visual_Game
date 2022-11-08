@@ -45,6 +45,7 @@ private:
     cocos2d::Sprite* _l;
     cocos2d::Sprite* _r;
     cocos2d::Sprite* _c;
+    cocos2d::Menu* _MainMenu;
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -55,31 +55,58 @@ bool Juli4Ever::init()
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
 
-
     auto back = Sprite::create("Utils/daylight_Background.png");
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-        auto prueba = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 12);
-        prueba->setString(Bienvenida());
-        prueba->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
-        this->addChild(prueba, 2);
+        auto Habla = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 12);
+        Habla->setString(Bienvenida());
+        Habla->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
+        this->addChild(Habla, 2);
         auto dial = Sprite::create("Utils/blueStextbox.png");
-        dial->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+        dial->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
         this->addChild(dial, 1);
 
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
-    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
         this->addChild(_l, 3);
     _r = Sprite::create("Juli_sprites/Poses/1r.png");
-    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
+    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
         this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
         this->addChild(_c, 5);
+
+
+        auto myScene = Scene::create();
+
+        auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 20);
+        Hablar->setPosition(100, 100);
+        auto hablar = MenuItemLabel::create(Hablar);
+
+        auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 20);
+        Jugar->setPosition(100, 80);
+        auto jugar = MenuItemLabel::create(Jugar);
+
+        auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 20);
+        Musica->setPosition(100, 60);
+        auto musica = MenuItemLabel::create(Musica);
+
+        auto closeItem = MenuItemImage::create(
+            "CloseNormal.png",
+            "CloseSelected.png",
+            CC_CALLBACK_1(Juli4Ever::menuCloseCallback, this));
+        //closeItem->setPosition(50, 50);
+
+        _MainMenu = Menu::create(hablar, jugar, musica, closeItem,NULL);
+        _MainMenu->setPosition(100, 100);
+        this->addChild(_MainMenu, 6);    
+        
+        
 
     return true;
 }
+
 
 
 void Juli4Ever::menuCloseCallback(Ref* pSender)

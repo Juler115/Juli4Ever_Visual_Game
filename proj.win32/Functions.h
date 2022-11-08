@@ -16,6 +16,7 @@
 #include <chrono> 
 #include <codecvt>
 #include <tchar.h>
+//#include "ui/CocosGUI.h"
 
 extern map<string,string> Datos;	
 extern vector<string>DatMusic;
