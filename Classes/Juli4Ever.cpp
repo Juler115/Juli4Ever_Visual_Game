@@ -76,48 +76,56 @@ bool Juli4Ever::init()
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
         this->addChild(_c, 5);
-
-
-        auto myScene = Scene::create();
-
-        auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 20);
-        Hablar->setPosition(100, 100);
-        auto hablar = MenuItemLabel::create(Hablar);
-
-        auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 20);
-        Jugar->setPosition(100, 80);
-        auto jugar = MenuItemLabel::create(Jugar);
-
-        auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 20);
-        Musica->setPosition(100, 60);
-        auto musica = MenuItemLabel::create(Musica);
-
+  
+        //auto  boton = Button::create();
+        //boton->setTitleLabel("Hola");
         auto closeItem = MenuItemImage::create(
             "CloseNormal.png",
             "CloseSelected.png",
-            CC_CALLBACK_1(Juli4Ever::menuCloseCallback, this));
-        //closeItem->setPosition(50, 50);
+            CC_CALLBACK_1(Juli4Ever::Juegos, this));
+        Label prueba1;
+        prueba1.setString("Prueba1");
 
-        _MainMenu = Menu::create(hablar, jugar, musica, closeItem,NULL);
-        _MainMenu->setPosition(100, 100);
-        this->addChild(_MainMenu, 6);    
+        if (closeItem == nullptr ||
+            closeItem->getContentSize().width <= 0 ||
+            closeItem->getContentSize().height <= 0)
+        {
+            problemLoading("'CloseNormal.png' and 'CloseSelected.png'");
+        }
+        else
+        {
+            float x = 100;
+            float y = 100;
+            closeItem->setPosition(Vec2(x, y));
+        }
+        // create menu, it's an autorelease object
+        auto menu = Menu::create(closeItem, NULL);
+        menu->setPosition(Vec2::ZERO);
+        this->addChild(menu, 1);
         
         
 
     return true;
 }
+void Juli4Ever::Juegos(Ref* pSender)
+{
+    auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 20);
+    Hablar->setPosition(100, 100);
+    auto hablar = MenuItemLabel::create(Hablar);
 
+    auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 20);
+    Jugar->setPosition(100, 80);
+    auto jugar = MenuItemLabel::create(Jugar);
 
-
+    auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 20);
+    Musica->setPosition(100, 60);
+    auto musica = MenuItemLabel::create(Musica);
+    _MainMenu = Menu::create(hablar, jugar, musica, NULL);
+    _MainMenu->setPosition(100, 100);
+    this->addChild(_MainMenu, 6);
+}
 void Juli4Ever::menuCloseCallback(Ref* pSender)
 {
-    //Close the cocos2d-x game scene and quit the application
+
     Director::getInstance()->end();
-
-    /*To navigate back to native iOS screen(if present) without quitting the application  ,do not use Director::getInstance()->end() as given above,instead trigger a custom event created in RootViewController.mm as below*/
-
-    //EventCustom customEndEvent("game_scene_close_event");
-    //_eventDispatcher->dispatchEvent(&customEndEvent);
-
-
 }

@@ -38,6 +38,7 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
+    void Juegos(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(Juli4Ever);
@@ -46,6 +47,7 @@ private:
     cocos2d::Sprite* _r;
     cocos2d::Sprite* _c;
     cocos2d::Menu* _MainMenu;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__
