@@ -43,6 +43,7 @@ static void problemLoading(const char* filename)
 // on "init" you need to initialize your instance
 bool Juli4Ever::init()
 {
+    check();
     //////////////////////////////
     // 1. super init first
     if (!Scene::init())
