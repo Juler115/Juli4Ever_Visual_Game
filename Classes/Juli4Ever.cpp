@@ -79,12 +79,6 @@ bool Juli4Ever::init()
   
         //auto  boton = Button::create();
         //boton->setTitleLabel("Hola");
-        auto closeItem = MenuItemImage::create(
-            "CloseNormal.png",
-            "CloseSelected.png",
-            CC_CALLBACK_1(Juli4Ever::Juegos, this));
-        Label prueba1;
-        prueba1.setString("Prueba1");
 
         if (closeItem == nullptr ||
             closeItem->getContentSize().width <= 0 ||
