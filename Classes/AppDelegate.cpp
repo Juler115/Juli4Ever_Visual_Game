@@ -112,7 +112,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
-    auto scene = Juli4Ever::createScene();
+    auto scene = BienvenidaS::createScene();
 
     // run
     director->runWithScene(scene);

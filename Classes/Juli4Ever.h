@@ -28,6 +28,25 @@
 #include "cocos2d.h"
 #include "Functions.h"
 
+class BienvenidaS : public cocos2d::Scene
+{
+public:
+    static cocos2d::Scene* createScene();
+
+    virtual bool init();
+    void Op(cocos2d::Ref* pSender);
+    CREATE_FUNC(BienvenidaS);
+
+private:
+    cocos2d::Sprite* _TextBox;
+    cocos2d::Label* _Voz;
+    cocos2d::Sprite* _l;
+    cocos2d::Sprite* _r;
+    cocos2d::Sprite* _c;
+    cocos2d::Menu* _MainMenu;
+
+};
+
 
 class Juli4Ever : public cocos2d::Scene
 {
@@ -38,7 +57,8 @@ public:
     
     // a selector callback
     void menuCloseCallback(cocos2d::Ref* pSender);
-    void Juegos(cocos2d::Ref* pSender);
+    void MainMenu(cocos2d::Ref* pSender);
+    void Hablarrr(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(Juli4Ever);
@@ -52,4 +72,23 @@ private:
 
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+class Hablar : public cocos2d::Scene
+{
+public:
+    static cocos2d::Scene* createScene();
+
+    virtual bool init();
+    void Volver(cocos2d::Ref* pSender);
+    CREATE_FUNC(Hablar);
+
+private:
+    cocos2d::Sprite* _TextBox;
+    cocos2d::Label* _Voz;
+    cocos2d::Sprite* _l;
+    cocos2d::Sprite* _r;
+    cocos2d::Sprite* _c;
+    cocos2d::Menu* _MainMenu;
+
+};
+
+#endif

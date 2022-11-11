@@ -11,25 +11,22 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Cambio.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Conocer.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Datos.cpp">
       <Filter>Source Files\Juli4Ever\Utils</Filter>
     </ClCompile>
     <ClCompile Include="Decir.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Greetings.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Gustar.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
-    </ClCompile>
-    <ClCompile Include="Hablar.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Jugar.cpp">
       <Filter>Source Files\Juli4Ever\Jugar</Filter>
@@ -37,17 +34,14 @@
     <ClCompile Include="Musica.cpp">
       <Filter>Source Files\Juli4Ever\Musica</Filter>
     </ClCompile>
-    <ClCompile Include="Preguntar.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
-    </ClCompile>
     <ClCompile Include="Preguntas.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Sentimientos.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Siento.cpp">
-      <Filter>Source Files\Juli4Ever\Hablar</Filter>
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
     <ClCompile Include="Threats.cpp">
       <Filter>Source Files\Juli4Ever\Utils</Filter>
@@ -56,6 +50,15 @@
       <Filter>Source Files\Juli4Ever\Jugar</Filter>
     </ClCompile>
     <ClCompile Include="..\Classes\Juli4Ever.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Hablar.cpp">
+      <Filter>Source Files\Classes\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Preguntar.cpp">
+      <Filter>Source Files\Classes\Hablar</Filter>
+    </ClCompile>
+    <ClCompile Include="Bienvenida.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
@@ -130,14 +133,14 @@
     <Filter Include="Source Files\Juli4Ever\Musica">
       <UniqueIdentifier>{6e4c6e0d-4561-44a2-9c72-9ea8592a9612}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Juli4Ever\Hablar">
-      <UniqueIdentifier>{cff0aac3-e592-41b7-87a4-5ab707ec1bb5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Juli4Ever\Jugar">
       <UniqueIdentifier>{8c876e79-c5db-40b7-b48a-0a2a4c679264}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files\Juli4Ever\Utils">
       <UniqueIdentifier>{894c9d72-0f3b-4428-bba7-16e2da1c7df7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Hablar">
+      <UniqueIdentifier>{cff0aac3-e592-41b7-87a4-5ab707ec1bb5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
