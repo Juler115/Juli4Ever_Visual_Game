@@ -21,7 +21,7 @@ bool BienvenidaS::init()
     {
         return false;
     }
-
+    Music("Ohayou Sayori!");
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
@@ -48,24 +48,18 @@ bool BienvenidaS::init()
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
     this->addChild(_c, 5);
 
-
-    auto closeItem = MenuItemImage::create(
-        "CloseNormal.png",
-        "CloseSelected.png",
-        CC_CALLBACK_1(BienvenidaS::Op, this));
-    closeItem->setPosition(0, -5);
-
-    auto menu = Menu::create(closeItem, NULL);
-    menu->setPosition(100, 100);
-    this->addChild(menu, 1);
-
-    return true;
+    auto listener = EventListenerKeyboard::create();
+    listener->onKeyPressed = CC_CALLBACK_2(BienvenidaS::Op, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
 
 }
 
-void BienvenidaS::Op(Ref* pSender)
+void BienvenidaS::Op(EventKeyboard::KeyCode keyCode, Event* event)
 {
    
     auto scene = Juli4Ever::createScene();
     Director::getInstance()->replaceScene(scene);
 }
+
+
