@@ -43,23 +43,28 @@ bool Hablar::init()
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
     this->addChild(_c, 5);
 
-    auto Hablar = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 20);
-    Hablar->setPosition(0, -5);
-    auto habl = Sprite::create("Utils/blueStextbox.png");
-    habl->setPosition(0, -5);
-    auto habl2 = Sprite::create("Utils/bluetextbox.png");
-    habl2->setPosition(0, -5);
-    auto hablar = MenuItemLabel::create(Hablar, CC_CALLBACK_1(Hablar::Volver, this));
-    auto hable = MenuItemSprite::create(habl, habl2, CC_CALLBACK_1(Hablar::Volver, this));
+    //auto volvi = MenuItemSprite::create(volv, volv2, CC_CALLBACK_1(Hablar::Volver, this));
 
-    auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 20);
-    Jugar->setPosition(0, -20);
-    auto jugar = MenuItemLabel::create(Jugar);
+    auto Preguntar = Label::createWithTTF("Preguntar", "fonts/Marker Felt.ttf", 15);
+    auto preguntar = MenuItemLabel::create(Preguntar, CC_CALLBACK_1(Hablar::Volver, this));
+    preguntar->setPosition(0, 0);
+    auto Conozcas = Label::createWithTTF("Quiero que me conozcas", "fonts/Marker Felt.ttf", 15);
+    auto conozcas = MenuItemLabel::create(Conozcas, CC_CALLBACK_1(Hablar::Volver, this));
+    conozcas->setPosition(0, -20);
+    auto Siento = Label::createWithTTF("Me siento...", "fonts/Marker Felt.ttf", 15);
+    auto siento = MenuItemLabel::create(Siento, CC_CALLBACK_1(Hablar::Volver, this));
+    siento->setPosition(0, -40);
+    auto Decir = Label::createWithTTF("Te quiero decir...", "fonts/Marker Felt.ttf", 15);
+    auto decir = MenuItemLabel::create(Decir, CC_CALLBACK_1(Hablar::Volver, this));
+    decir->setPosition(0, -60);
+    auto Cambiar = Label::createWithTTF("Quiero cambiar algo", "fonts/Marker Felt.ttf", 15);
+    auto cambiar = MenuItemLabel::create(Cambiar, CC_CALLBACK_1(Hablar::Volver, this));
+    cambiar->setPosition(0, -80);
+    auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+    auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_1(Hablar::Volver, this));
+    volver->setPosition(0, -100);
 
-    auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 20);
-    Musica->setPosition(0, -40);
-    auto musica = MenuItemLabel::create(Musica);
-    _MainMenu = Menu::create(hable, hablar, jugar, musica, NULL);
+    _MainMenu = Menu::create(preguntar,conozcas,siento,decir,cambiar,volver,NULL);
     _MainMenu->setPosition(200, 200);
     this->addChild(_MainMenu, 6);
    

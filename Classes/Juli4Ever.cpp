@@ -71,23 +71,23 @@ bool Juli4Ever::init()
     this->addChild(_c, 5);
 
 
-    auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 20);
-    Hablar->setPosition(0, -5);
+    auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 15);
     auto habl = Sprite::create("Utils/blueStextbox.png");
     habl->setPosition(0,-5);
     auto habl2 = Sprite::create("Utils/bluetextbox.png");
     habl2->setPosition(0, -5);
     auto hablar = MenuItemLabel::create(Hablar, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
-    auto hable = MenuItemSprite::create(habl,habl2, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
+    hablar->setPosition(0, 0);
+    //auto hable = MenuItemSprite::create(habl,habl2, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
 
-    auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 20);
-    Jugar->setPosition(0, -20);
+    auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 15);
     auto jugar = MenuItemLabel::create(Jugar);
+    jugar->setPosition(0, -40);
 
-    auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 20);
-    Musica->setPosition(0, -40);
+    auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 15);
     auto musica = MenuItemLabel::create(Musica);
-    _MainMenu = Menu::create(hable,hablar,jugar,musica, NULL);
+    musica->setPosition(0, -80);
+    _MainMenu = Menu::create(hablar,jugar,musica, NULL);
     _MainMenu->setPosition(200,200);
     this->addChild(_MainMenu, 6);
         
