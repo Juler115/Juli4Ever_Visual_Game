@@ -32,7 +32,7 @@ bool Hablar::init()
     _TextBox = Sprite::create("Utils/blueStextbox.png");
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
-
+    /*
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
@@ -41,12 +41,12 @@ bool Hablar::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);
+    this->addChild(_c, 5);*/
 
     //auto volvi = MenuItemSprite::create(volv, volv2, CC_CALLBACK_1(Hablar::Volver, this));
 
     auto Preguntar = Label::createWithTTF("Preguntar", "fonts/Marker Felt.ttf", 15);
-    auto preguntar = MenuItemLabel::create(Preguntar, CC_CALLBACK_1(Hablar::Volver, this));
+    auto preguntar = MenuItemLabel::create(Preguntar, CC_CALLBACK_1(Hablar::Preguntar, this));
     preguntar->setPosition(0, 0);
     auto Conozcas = Label::createWithTTF("Quiero que me conozcas", "fonts/Marker Felt.ttf", 15);
     auto conozcas = MenuItemLabel::create(Conozcas, CC_CALLBACK_1(Hablar::Volver, this));
@@ -69,42 +69,17 @@ bool Hablar::init()
     this->addChild(_MainMenu, 6);
    
     return true;
-	/*
-	int selec;
-
-	do
-	{
-		Act();
-		cout << "De que te gustaria hablar ahora ?\n";
-		cout << "1. Preguntar\n";
-		cout << "2. Quiero que me conozcas\n";
-		cout << "3. Me siento...\n";
-		cout << "4. Te quiero decir...\n";
-		cout << "5. Quiero cambiar algo\n";
-		cout << "6. Volver\n";
-		cin >> selec;
-		system("cls");
-		Hablar_Op(selec);
-	} while (selec != 6);
-
-}
-void Hablar_Op(int selec)
-{
-
-	switch (selec)
-	{
-	case 1: system("cls"), Preguntar(); break;
-	case 2: system("cls"), Conocer(); break;
-	case 3: system("cls"), Siento(); break;
-	case 4: system("cls"), Decir(); break;
-	case 5: system("cls"), Cambio(); break;
-	}
-}*/
+	
 }
 
 void Hablar::Volver(Ref* pSender)
 {
     auto scene = Juli4Ever::createScene();
+    Director::getInstance()->replaceScene(scene);
+}
+void Hablar::Preguntar(Ref* pSender)
+{
+    auto scene = Preguntar::createScene();
     Director::getInstance()->replaceScene(scene);
 }
 

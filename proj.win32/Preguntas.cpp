@@ -1,7 +1,8 @@
 #include "Functions.h"
 
-string Eres(){
-	return "Soy una IA creada por Erwin, con el proposito de ayudar a pasar un rato divertido conmigo\n";
+string Eres(int x){
+	if (x==1) return "Soy una IA,";
+	else if(x==0) return "mi proposito es ayudarte a pasar un rato divertido\n";
 }
 string Sirves(){
 	return "Tengo muchas funcionalidades, puedes escuchar musica conmigo, jugar algun juego divertido o simplemente sentarnos a charlar :3\n";

@@ -60,7 +60,8 @@ bool Juli4Ever::init()
     _TextBox = Sprite::create("Utils/blueStextbox.png");
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
-    _l = Sprite::create("Juli_sprites/Poses/1l.png");
+
+    /*_l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
     _r = Sprite::create("Juli_sprites/Poses/1r.png");
@@ -68,17 +69,12 @@ bool Juli4Ever::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);
+    this->addChild(_c, 5);*/
 
 
     auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 15);
-    auto habl = Sprite::create("Utils/blueStextbox.png");
-    habl->setPosition(0,-5);
-    auto habl2 = Sprite::create("Utils/bluetextbox.png");
-    habl2->setPosition(0, -5);
     auto hablar = MenuItemLabel::create(Hablar, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
     hablar->setPosition(0, 0);
-    //auto hable = MenuItemSprite::create(habl,habl2, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
 
     auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 15);
     auto jugar = MenuItemLabel::create(Jugar);
@@ -87,6 +83,7 @@ bool Juli4Ever::init()
     auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 15);
     auto musica = MenuItemLabel::create(Musica);
     musica->setPosition(0, -80);
+
     _MainMenu = Menu::create(hablar,jugar,musica, NULL);
     _MainMenu->setPosition(200,200);
     this->addChild(_MainMenu, 6);

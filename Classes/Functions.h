@@ -22,7 +22,7 @@ extern vector<string>DatMusic;
 extern vector<string>DatMusic;
 //extern string basura;
 extern bool Usados[5];
-//extern Julieta Juli;
+extern Julieta Juli;
 //extern thread hilo;
 
 
@@ -57,7 +57,7 @@ void JugarOp(int);
 void TyV();
 void Preguntar();
 void Preguntas(int);
-string Eres();
+string Eres(int);
 string Sirves();
 string Pensamientos();
 string Nosotros();

@@ -37,7 +37,7 @@ bool BienvenidaS::init()
     _TextBox = Sprite::create("Utils/blueStextbox.png");
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
-
+    /*
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
@@ -46,7 +46,7 @@ bool BienvenidaS::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);
+    this->addChild(_c, 5);*/
 
     auto listener = EventListenerKeyboard::create();
     listener->onKeyPressed = CC_CALLBACK_2(BienvenidaS::Op, this);
@@ -57,7 +57,6 @@ bool BienvenidaS::init()
 
 void BienvenidaS::Op(EventKeyboard::KeyCode keyCode, Event* event)
 {
-   
     auto scene = Juli4Ever::createScene();
     Director::getInstance()->replaceScene(scene);
 }

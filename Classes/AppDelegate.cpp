@@ -112,7 +112,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     // create a scene. it's an autorelease object
 
-    auto scene = BienvenidaS::createScene();
+    auto scene = Preguntar::createScene();
 
     // run
     director->runWithScene(scene);

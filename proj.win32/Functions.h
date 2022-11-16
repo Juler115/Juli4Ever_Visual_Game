@@ -57,7 +57,7 @@ void JugarOp(int);
 void TyV();
 void Preguntar();
 void Preguntas(int);
-string Eres();
+string Eres(int);
 string Sirves();
 string Pensamientos();
 string Nosotros();
