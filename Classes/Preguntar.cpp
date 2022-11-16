@@ -1,6 +1,6 @@
 #include "Juli4Ever.h"
 
-int x = 1;
+int x = 0;
 
 USING_NS_CC;
 
@@ -18,7 +18,6 @@ static void problemLoading(const char* filename)
 
 bool Preguntar::init()
 {
-    x = 1;
 	check();
 	if (!Scene::init())
 	{
@@ -53,16 +52,16 @@ bool Preguntar::init()
     auto quien = MenuItemLabel::create(Quien, CC_CALLBACK_1(Preguntar::EresP, this));
     quien->setPosition(0, 0);
     auto Servir = Label::createWithTTF("Para que sirves?", "fonts/Marker Felt.ttf", 15);
-    auto servir = MenuItemLabel::create(Servir, CC_CALLBACK_1(Preguntar::Volver, this));
+    auto servir = MenuItemLabel::create(Servir, CC_CALLBACK_1(Preguntar::SirvesP, this));
     servir->setPosition(0, -20);
     auto Pienso = Label::createWithTTF("Cuales son tus pensamientos?", "fonts/Marker Felt.ttf", 15);
-    auto pienso = MenuItemLabel::create(Pienso, CC_CALLBACK_1(Preguntar::Volver, this));
+    auto pienso = MenuItemLabel::create(Pienso, CC_CALLBACK_1(Preguntar::PensamientosP, this));
     pienso->setPosition(0, -40);
     auto Nosotros = Label::createWithTTF("Que piensas sobre nosotros?", "fonts/Marker Felt.ttf", 15);
-    auto nosotros = MenuItemLabel::create(Nosotros, CC_CALLBACK_1(Preguntar::Volver, this));
+    auto nosotros = MenuItemLabel::create(Nosotros, CC_CALLBACK_1(Preguntar::NosotrosP, this));
     nosotros->setPosition(0, -60);
     auto Cuentame = Label::createWithTTF("Cuentame algo sobre ti?", "fonts/Marker Felt.ttf", 15);
-    auto cuentame = MenuItemLabel::create(Cuentame, CC_CALLBACK_1(Preguntar::Volver, this));
+    auto cuentame = MenuItemLabel::create(Cuentame, CC_CALLBACK_1(Preguntar::MiP, this));
     cuentame->setPosition(0, -80);
     auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
     auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_1(Preguntar::Volver, this));
@@ -79,7 +78,7 @@ bool Preguntar::init()
 
 void Preguntar::EresP(Ref* pSender)
 {
-    x = 1;
+    x = 0;
     auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
@@ -93,10 +92,11 @@ void Preguntar::EresP(Ref* pSender)
     _c->runAction(move3);*/
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
-    if(x) _Voz->setString(Eres(x));
+    _Voz->setString(Eres(x));
+    x=1;
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
-        x = 0;
+
         auto listener = EventListenerKeyboard::create();
         listener->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             _Voz->setString(Eres(x));
@@ -106,6 +106,169 @@ void Preguntar::EresP(Ref* pSender)
         };
         _eventDispatcher->addEventListenerWithSceneGraphPriority(listener, this);
 
+
+}
+void Preguntar::SirvesP(Ref* pSender)
+{
+    x = 0;
+    auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
+    _MainMenu->runAction(men);
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString(Sirves(x));
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+    x = 1;
+
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        _Voz->setString(Sirves(x));
+        x = 2;
+        auto ST2 = EventListenerKeyboard::create();
+        ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+            _Voz->setString(Sirves(x));
+            x = 3;
+            auto ST3 = EventListenerKeyboard::create();
+            ST3->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                _Voz->setString(Sirves(x));
+                auto Return = EventListenerKeyboard::create();
+                Return->onKeyPressed = CC_CALLBACK_2(Preguntar::VolverT, this);
+                _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST3, this);
+        };
+        _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
+
+}
+void Preguntar::PensamientosP(Ref* pSender)
+{
+    x = 0;
+    auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
+    _MainMenu->runAction(men);
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString(Pensamientos(x));
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+    x = 1;
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        _Voz->setString(Pensamientos(x));
+        x = 2;
+        auto ST2 = EventListenerKeyboard::create();
+        ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+            _Voz->setString(Pensamientos(x));
+            x = 3;
+            auto ST3 = EventListenerKeyboard::create();
+            ST3->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                _Voz->setString(Pensamientos(x));
+                auto Return = EventListenerKeyboard::create();
+                Return->onKeyPressed = CC_CALLBACK_2(Preguntar::VolverT, this);
+                _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST3, this);
+        };
+        _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
+
+}
+void Preguntar::NosotrosP(Ref* pSender)
+{
+    x = 0;
+    auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
+    _MainMenu->runAction(men);
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString(Nosotros(x));
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+    x = 1;
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        _Voz->setString(Nosotros(x));
+        x = 2;
+        auto ST2 = EventListenerKeyboard::create();
+        ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+            _Voz->setString(Nosotros(x));
+            x = 3;
+            auto ST3 = EventListenerKeyboard::create();
+            ST3->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                _Voz->setString(Nosotros(x));
+                x = 4;
+                auto ST4 = EventListenerKeyboard::create();
+                ST4->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                    _Voz->setString(Nosotros(x));
+                    auto Return = EventListenerKeyboard::create();
+                    Return->onKeyPressed = CC_CALLBACK_2(Preguntar::VolverT, this);
+                    _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+                };
+                _eventDispatcher->addEventListenerWithSceneGraphPriority(ST4, this);
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST3, this);
+        };
+        _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
+
+}
+void Preguntar::MiP(Ref* pSender)
+{
+    x = 0;
+    auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
+    _MainMenu->runAction(men);
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString(Mi(x));
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+    x = 1;
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        _Voz->setString(Mi(x));
+            auto Return = EventListenerKeyboard::create();
+            Return->onKeyPressed = CC_CALLBACK_2(Preguntar::VolverT, this);
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
 
 }
 void Preguntar::Volver(Ref* pSender)

@@ -25,6 +25,12 @@ extern bool Usados[5];
 extern Julieta Juli;
 //extern thread hilo;
 
+extern vector<string> EresT;
+extern vector<string> SirvesT;
+extern vector<string> PensamientosT;
+extern vector<string> NosotrosT;
+extern vector<string> MiT;
+
 
 void Act();
 bool check();
@@ -58,10 +64,10 @@ void TyV();
 void Preguntar();
 void Preguntas(int);
 string Eres(int);
-string Sirves();
-string Pensamientos();
-string Nosotros();
-string Mi();
+string Sirves(int);
+string Pensamientos(int);
+string Nosotros(int);
+string Mi(int);
 void Siento();
 void SientoOp(int);
 string Enojado();

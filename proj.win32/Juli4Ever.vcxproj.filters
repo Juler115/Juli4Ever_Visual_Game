@@ -61,6 +61,9 @@
     <ClCompile Include="Bienvenida.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Conversations.cpp">
+      <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\Juler\Documents\July\Juli\Juli4ever_Game\Juli4Ever\Classes\AppDelegate.h">

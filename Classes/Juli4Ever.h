@@ -100,6 +100,10 @@ public:
 
     virtual bool init();
     void EresP(cocos2d::Ref* pSender);
+    void SirvesP(cocos2d::Ref* pSender);
+    void PensamientosP(cocos2d::Ref* pSender);
+    void NosotrosP(cocos2d::Ref* pSender);
+    void MiP(cocos2d::Ref* pSender);
     void Volver(cocos2d::Ref* pSender);
     void VolverT(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
     CREATE_FUNC(Preguntar);
