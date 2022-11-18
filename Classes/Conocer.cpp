@@ -110,28 +110,31 @@ void Conocer::Cumple()
     x = 1;
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
-
-
+    
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
-        _Voz->setString("Que dia cumples ?");
-        auto Input = ui::TextField::create("cumple", "fonts/Marker Felt.ttf", 30);
-        Input->setPosition(Vec2(200, 200));
-        this->addChild(Input,10);
+        if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+        {
+            _Voz->setString("Que dia cumples ?");
+            auto Input = ui::TextField::create("cumple", "fonts/Marker Felt.ttf", 30);
+            Input->setPosition(Vec2(200, 200));
+            this->addChild(Input, 10);
+            auto ST2 = EventListenerKeyboard::create();
+            ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+                {
+                    string cumple = Input->getString();
+                    Modi("Cumple", cumple);
+                    Volver();
+                }
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+        }
         
-        auto ST2 = EventListenerKeyboard::create();
-        ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
-            if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
-            {
-               //cumple = Input->getString();
-               string cumple = "hola";
-               log("%s", cumple);
-               Volver();
-            }
-        };
-        _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
     };
     _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
+
+ 
     /*
     if (Datos["Cumple"] == "") {
         cin.ignore();
