@@ -126,9 +126,9 @@ public:
     virtual bool init();
     
     void Cumple();
-    void FavComi(cocos2d::Ref* pSender);
-    void FavPasat(cocos2d::Ref* pSender);
-    void Aspiraciones(cocos2d::Ref* pSender);
+    void FavComi();
+    void FavPasat();
+    void Aspiraciones();
     void Volver();
     void VolverT(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
     CREATE_FUNC(Conocer);

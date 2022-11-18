@@ -1,8 +1,6 @@
 #include "Juli4Ever.h"
 #include <ui/UITextField.h>
 bool Usados[5];
-//int x = 0;
-bool hola = true;
 
 USING_NS_CC;
 
@@ -48,34 +46,28 @@ bool Conocer::init()
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
     this->addChild(_c, 5);*/
 
-    /*
+    
     int c=1;
     srand(time(NULL));
     if (Datos["Cumple"] != "" && Datos["FavComi"] != "" && Datos["FavPasat"] != "" && Datos["Aspiraciones"] != "")
     {
-        auto ST1 = EventListenerKeyboard::create();
-        ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             _Voz->setString("Conozco suficiente de ti \n te parece si hacemos otra cosa ?");
             auto Return = EventListenerKeyboard::create();
             Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
             _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
-        };
-        _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
     }
     else {
         do {
-           // c = 1 + rand() % 4;
+           c = 1 + rand() % 4;
         } while (Usados[c] == true);
         switch (c)
         {
-        case 1: Usados[c] = true; CC_CALLBACK_1(Conocer::Cumple,this);break;
-        case 2: Usados[c] = true; CC_CALLBACK_1(Conocer::FavComi, this); break;
-        case 3: Usados[c] = true; CC_CALLBACK_1(Conocer::FavPasat, this); break;
-        case 4: Usados[c] = true; CC_CALLBACK_1(Conocer::Aspiraciones, this); break;
+        case 1: Usados[c] = true; Cumple();break;
+        case 2: Usados[c] = true; FavComi(); break;
+        case 3: Usados[c] = true; FavPasat(); break;
+        case 4: Usados[c] = true; Aspiraciones(); break;
         }
-    }*/
-    if(hola)
-    hola=false,Cumple();
+    }
     
     
     return true;
@@ -83,18 +75,19 @@ bool Conocer::init()
 
 void Conocer::Volver()
 {
+    Act();
     auto scene = Hablar::createScene();
     Director::getInstance()->replaceScene(scene);
 }
 void Conocer::VolverT(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event)
 {
+    Act();
     auto scene = Hablar::createScene();
     Director::getInstance()->replaceScene(scene);
 }
 
 void Conocer::Cumple()
 {
-    int x = 0;
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     /*
@@ -107,7 +100,6 @@ void Conocer::Cumple()
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     _Voz->setString("Ok es mi turno de preguntar entonces");
-    x = 1;
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     
@@ -123,9 +115,21 @@ void Conocer::Cumple()
             ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
                 if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
                 {
-                    string cumple = Input->getString();
-                    Modi("Cumple", cumple);
-                    Volver();
+                    if (Datos["Cumple"] == ""){
+                        string cumple = Input->getString();
+                        ofstream data;
+                        data.open("Data.txt", ios::app);
+                        data << "\nCumple " << cumple;
+                        data.close();
+                        _Voz->setString("Entendido lo recordare");
+                        Input->setPosition(Vec2(1000,1000));
+                        Juli.Afs();
+                        Act();
+                        ACF();
+                    }
+                    auto Return = EventListenerKeyboard::create();
+                    Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
+                    _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
                 }
             };
             _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
@@ -135,60 +139,162 @@ void Conocer::Cumple()
     _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
 
  
+    
+
+}
+void Conocer::FavComi()
+{
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
     /*
-    if (Datos["Cumple"] == "") {
-        cin.ignore();
-        getline(cin, cumple);
-        ofstream data;
-        data.open("Data.txt", ios::app);
-        data << "\nCumple " << cumple;
-        //cout << "Entendido,lo recordare :3\n";
-        Juli.Afs();
-    }*/
-    //else cout << "cumples el " + Datos["Cumple"] + " aun lo recuerdo :3\n";
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString("Ok es mi turno de preguntar entonces");
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+        {
+            _Voz->setString("Cual es tu comida favorita ?");
+            auto Input = ui::TextField::create("FavComi", "fonts/Marker Felt.ttf", 30);
+            Input->setPosition(Vec2(200, 200));
+            this->addChild(Input, 10);
+            auto ST2 = EventListenerKeyboard::create();
+            ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+                {
+                    if (Datos["FavComi"] == "") {
+                        string FavComi = Input->getString();
+                        ofstream data;
+                        data.open("Data.txt", ios::app);
+                        data << "\nFavComi " << FavComi;
+                        data.close();
+                        _Voz->setString("Entendido lo recordare");
+                        Input->setPosition(Vec2(1000, 1000));
+                        Juli.Afs();
+                        Act();
+                        ACF();
+                    }
+                    auto Return = EventListenerKeyboard::create();
+                    Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
+                    _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+                }
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+        }
+
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
 }
-void Conocer::FavComi(Ref* pSender)
+void Conocer::FavPasat()
 {
-    if (Datos["FavComi"] == "") {
-        cout << "Cual es tu comida favorita?\n";
-        string comi;
-        cin.ignore();
-        getline(cin, comi);
-        ofstream data;
-        data.open("Data.txt", ios::app);
-        data << "\nFavComi " << comi;
-        cout << "Entendido,la recordare :3\n";
-        Juli.Afs();
-    }
-    else cout << "Tu comida favorita era " + Datos["FavComi"] + " aun la recuerdo :3\n";
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString("Ok es mi turno de preguntar entonces");
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+        {
+            _Voz->setString("Cual es tu pasatiempo favorito?");
+            auto Input = ui::TextField::create("FavPasat", "fonts/Marker Felt.ttf", 30);
+            Input->setPosition(Vec2(200, 200));
+            this->addChild(Input, 10);
+            auto ST2 = EventListenerKeyboard::create();
+            ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+                {
+                    if (Datos["FavPasat"] == "") {
+                        string FavPasat = Input->getString();
+                        ofstream data;
+                        data.open("Data.txt", ios::app);
+                        data << "\nFavPasat " << FavPasat;
+                        data.close();
+                        _Voz->setString("Entendido lo recordare");
+                        Input->setPosition(Vec2(1000, 1000));
+                        Juli.Afs();
+                        Act();
+                        ACF();
+                    }
+                    auto Return = EventListenerKeyboard::create();
+                    Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
+                    _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+                }
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+        }
+
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
 }
-void Conocer::FavPasat(Ref* pSender)
+void Conocer::Aspiraciones()
 {
-    if (Datos["FavPasat"] == "") {
-        cout << "Cual es tu Pasatiempo favorito?\n";
-        string pasa;
-        cin.ignore();
-        getline(cin, pasa);
-        ofstream data;
-        data.open("Data.txt", ios::app);
-        data << "\nFavPasat " << pasa;
-        cout << "Entendido,lo recordare :3\n";
-        Juli.Afs();
-    }
-    else cout << "Tu pasatiempo favortio era " + Datos["FavPasat"] + " aun lo recuerdo :3\n";
-}
-void Conocer::Aspiraciones(Ref* pSender)
-{
-    if (Datos["Aspiraciones"] == "") {
-        cout << "Cual es tu mayor deseo a futuro?\n";
-        string aspi;
-        cin.ignore();
-        getline(cin, aspi);
-        ofstream data;
-        data.open("Data.txt", ios::app);
-        data << "\nAspiraciones " << aspi;
-        cout << "Entendido,lo recordare :3\n";
-        Juli.Afs();
-    }
-    else cout << "Tu mayor deseo era " + Datos["Aspiraciones"] + " aun lo recuerdo :3\n";
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    /*
+    auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _l->runAction(move);
+    auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
+    _r->runAction(move2);
+    auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
+    _c->runAction(move3);*/
+    auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _TextBox->runAction(move4);
+    _Voz->setString("Ok es mi turno de preguntar entonces");
+    auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->runAction(move5);
+
+    auto ST1 = EventListenerKeyboard::create();
+    ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+        if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+        {
+            _Voz->setString("Cuales son tus aspiraciones?");
+            auto Input = ui::TextField::create("Aspiraciones", "fonts/Marker Felt.ttf", 30);
+            Input->setPosition(Vec2(200, 200));
+            this->addChild(Input, 10);
+            auto ST2 = EventListenerKeyboard::create();
+            ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
+                if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
+                {
+                    if (Datos["Aspiraciones"] == "") {
+                        string Aspiraciones = Input->getString();
+                        ofstream data;
+                        data.open("Data.txt", ios::app);
+                        data << "\nAspiraciones " << Aspiraciones;
+                        data.close();
+                        _Voz->setString("Entendido lo recordare");
+                        Input->setPosition(Vec2(1000, 1000));
+                        Juli.Afs();
+                        Act();
+                        ACF();
+                    }
+                    auto Return = EventListenerKeyboard::create();
+                    Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
+                    _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
+                }
+            };
+            _eventDispatcher->addEventListenerWithSceneGraphPriority(ST2, this);
+        }
+
+    };
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
 }
