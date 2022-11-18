@@ -811,11 +811,11 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Classes\Conocer.cpp" />
     <ClCompile Include="..\Classes\Hablar.cpp" />
     <ClCompile Include="..\Classes\Preguntar.cpp" />
     <ClCompile Include="Bienvenida.cpp" />
     <ClCompile Include="Cambio.cpp" />
-    <ClCompile Include="Conocer.cpp" />
     <ClCompile Include="Conversations.cpp" />
     <ClCompile Include="Datos.cpp" />
     <ClCompile Include="Decir.cpp" />

@@ -13,9 +13,6 @@
     <ClCompile Include="Cambio.cpp">
       <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
-    <ClCompile Include="Conocer.cpp">
-      <Filter>Source Files\Classes\Hablar</Filter>
-    </ClCompile>
     <ClCompile Include="Datos.cpp">
       <Filter>Source Files\Juli4Ever\Utils</Filter>
     </ClCompile>
@@ -63,6 +60,9 @@
     </ClCompile>
     <ClCompile Include="Conversations.cpp">
       <Filter>Source Files\Juli4Ever\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Conocer.cpp">
+      <Filter>Source Files\Classes\Hablar</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

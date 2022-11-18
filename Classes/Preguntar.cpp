@@ -124,8 +124,8 @@ void Preguntar::SirvesP(Ref* pSender)
     _c->runAction(move3);*/
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
-    _Voz->setString(Sirves(x));
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
+    _Voz->setString(Sirves(x));
     _Voz->runAction(move5);
     x = 1;
 

@@ -49,7 +49,7 @@ bool Hablar::init()
     auto preguntar = MenuItemLabel::create(Preguntar, CC_CALLBACK_1(Hablar::Preguntar, this));
     preguntar->setPosition(0, 0);
     auto Conozcas = Label::createWithTTF("Quiero que me conozcas", "fonts/Marker Felt.ttf", 15);
-    auto conozcas = MenuItemLabel::create(Conozcas, CC_CALLBACK_1(Hablar::Volver, this));
+    auto conozcas = MenuItemLabel::create(Conozcas, CC_CALLBACK_1(Hablar::Conocer, this));
     conozcas->setPosition(0, -20);
     auto Siento = Label::createWithTTF("Me siento...", "fonts/Marker Felt.ttf", 15);
     auto siento = MenuItemLabel::create(Siento, CC_CALLBACK_1(Hablar::Volver, this));
@@ -80,6 +80,11 @@ void Hablar::Volver(Ref* pSender)
 void Hablar::Preguntar(Ref* pSender)
 {
     auto scene = Preguntar::createScene();
+    Director::getInstance()->replaceScene(scene);
+}
+void Hablar::Conocer(Ref* pSender)
+{
+    auto scene = Conocer::createScene();
     Director::getInstance()->replaceScene(scene);
 }
 
