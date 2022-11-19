@@ -81,3 +81,7 @@ void ACF()
 {
     Modi("Afecto", to_string(Juli.Afecto()));
 }
+void CAAfecto()
+{
+    Modi("Afecto", to_string(Juli.Afecto()));
+}
