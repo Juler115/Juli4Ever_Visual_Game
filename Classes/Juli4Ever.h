@@ -59,6 +59,7 @@ public:
     void Preguntar(cocos2d::Ref* pSender);
     void Conocer(cocos2d::Ref* pSender);
     void Cambio(cocos2d::Ref* pSender);
+    void Siento(cocos2d::Ref* pSender);
     void Volver(cocos2d::Ref* pSender);
     CREATE_FUNC(Hablar);
 
@@ -134,6 +135,31 @@ public:
     void Volver();
     void VolverT(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
     CREATE_FUNC(Cambio);
+
+private:
+    cocos2d::Sprite* _TextBox;
+    cocos2d::Label* _Voz;
+    cocos2d::Sprite* _l;
+    cocos2d::Sprite* _r;
+    cocos2d::Sprite* _c;
+    cocos2d::Menu* _MainMenu;
+
+};
+class Siento : public cocos2d::Scene
+{
+public:
+    static cocos2d::Scene* createScene();
+
+    virtual bool init();
+
+    void EnojadoP();
+    void TristeP();
+    void FelizP();
+    void AburridoP();
+    void NerviosoP();
+    void Volver();
+    void VolverT();
+    CREATE_FUNC(Siento);
 
 private:
     cocos2d::Sprite* _TextBox;

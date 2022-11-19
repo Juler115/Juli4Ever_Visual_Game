@@ -1,22 +1,22 @@
 #include "Functions.h"
 
-string Enojado()
+string Enojado(int x)
 {
-	return "Tranquilo, se que hay veces que nos enojamos y talvez queramos herir a otros, pero no tienes que hacerlo para estar tranquilo, si necesitas ayuda siempre estoy aqui para ti :3 \n";
+	return EnojadoT[x];
 }
-string Triste()
+string Triste(int x)
 {
-	return "Se que aveces las cosas se ven mal, pero no te preocupe, yo se que se pueden solucionar, siempre te estare dando animos desde aqui :3\n";
+	return TristeT[x];
 }
-string Feliz()
+string Feliz(int x)
 {
-	return "Me alegro de verdad, verte feliz me hace sentir feliz a mi\n";
+	return FelizT[x];
 }
-string Aburrido()
+string Aburrido(int x)
 {
-	return "Bueno, espero que pueda solucionar ese problema pronto, no olvides que mi unico objetivo es verte con una sonrisa\n";
+	return AburridoT[x];
 }
-string Nervioso()
+string Nervioso(int x)
 {
-	return "No estes nervioso, si hay algo que te preocupa, todo puede arreglarse, si tienes alguna situacion que quieras platicarme siempre te escuchare\n";
+	return NerviosoT[x];
 }
