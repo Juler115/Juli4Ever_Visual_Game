@@ -12,7 +12,7 @@ Scene* Preguntar::createScene()
 static void problemLoading(const char* filename)
 {
 	printf("Error while loading: %s\n", filename);
-	printf("Depending on how you compiled you might have to add 'Resources/' in front of filenames in Hablar.cpp\n");
+	printf("Depending on how you compiled you might have to add 'Resources/' in front of filenames in Preguntar.cpp\n");
 }
 
 

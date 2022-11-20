@@ -43,8 +43,6 @@ bool Hablar::init()
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
     this->addChild(_c, 5);*/
 
-    //auto volvi = MenuItemSprite::create(volv, volv2, CC_CALLBACK_1(Hablar::Volver, this));
-
     auto Preguntar = Label::createWithTTF("Preguntar", "fonts/Marker Felt.ttf", 15);
     auto preguntar = MenuItemLabel::create(Preguntar, CC_CALLBACK_1(Hablar::Preguntar, this));
     preguntar->setPosition(0, 0);
@@ -55,7 +53,7 @@ bool Hablar::init()
     auto siento = MenuItemLabel::create(Siento, CC_CALLBACK_1(Hablar::Siento, this));
     siento->setPosition(0, -40);
     auto Decir = Label::createWithTTF("Te quiero decir...", "fonts/Marker Felt.ttf", 15);
-    auto decir = MenuItemLabel::create(Decir, CC_CALLBACK_1(Hablar::Siento, this));
+    auto decir = MenuItemLabel::create(Decir, CC_CALLBACK_1(Hablar::Decir, this));
     decir->setPosition(0, -60);
     auto Cambiar = Label::createWithTTF("Quiero cambiar algo", "fonts/Marker Felt.ttf", 15);
     auto cambiar = MenuItemLabel::create(Cambiar, CC_CALLBACK_1(Hablar::Cambio, this));
@@ -95,6 +93,11 @@ void Hablar::Cambio(Ref* pSender)
 void Hablar::Siento(Ref* pSender)
 {
     auto scene = Siento::createScene();
+    Director::getInstance()->replaceScene(scene);
+}
+void Hablar::Decir(Ref* pSender)
+{
+    auto scene = Decir::createScene();
     Director::getInstance()->replaceScene(scene);
 }
 

@@ -1,7 +1,7 @@
 #include "Functions.h"
 
 string Bienvenida() {
-	if (Juli.Afecto() >= 0)
+	if (Juli.Afecto() >= -1)
 	{
 		int x;
 		srand(time(NULL));

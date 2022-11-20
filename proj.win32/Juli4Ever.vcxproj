@@ -820,7 +820,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="Datos.cpp" />
     <ClCompile Include="Decir.cpp" />
     <ClCompile Include="Greetings.cpp" />
-    <ClCompile Include="Gustar.cpp" />
     <ClCompile Include="Jugar.cpp" />
     <ClCompile Include="Musica.cpp" />
     <ClCompile Include="Preguntas.cpp" />
