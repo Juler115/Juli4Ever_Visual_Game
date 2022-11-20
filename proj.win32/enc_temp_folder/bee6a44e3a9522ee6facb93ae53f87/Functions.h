@@ -17,7 +17,7 @@
 #include <codecvt>
 #include <tchar.h>
 
-extern map<string, string> Datos;
+extern map<string,string> Datos;	
 extern vector<string>DatMusic;
 //extern string basura;
 extern bool Usados[5];
@@ -44,7 +44,9 @@ void pause_thread(int);
 void stopMusic();
 void musica();
 void Music(string);
+void Musica();
 void CAAfecto();
+void JuMusica(int);
 void Jugar();
 void JugarOp(int);
 void TyV();

@@ -37,6 +37,7 @@ public:
     void menuCloseCallback(cocos2d::Ref* pSender);
     void MainMenu(cocos2d::Ref* pSender);
     void Hablarrr(cocos2d::Ref* pSender);
+    void Musica(cocos2d::Ref* pSender);
     
     // implement the "static create()" method manually
     CREATE_FUNC(Juli4Ever);
@@ -185,6 +186,26 @@ public:
     void Volver();
     void VolverT();
     CREATE_FUNC(Decir);
+
+private:
+    cocos2d::Sprite* _TextBox;
+    cocos2d::Label* _Voz;
+    cocos2d::Sprite* _l;
+    cocos2d::Sprite* _r;
+    cocos2d::Sprite* _c;
+    cocos2d::Menu* _MainMenu;
+
+};
+class Musica : public cocos2d::Scene
+{
+public:
+    static cocos2d::Scene* createScene();
+
+    virtual bool init();
+
+    void Musicc(int m);
+    void Volver();
+    CREATE_FUNC(Musica);
 
 private:
     cocos2d::Sprite* _TextBox;

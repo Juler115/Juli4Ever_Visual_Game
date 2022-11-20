@@ -29,7 +29,7 @@ bool Siento::init()
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("Que te gustaria saber?", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("Como te sientes hoy?", "fonts/Marker Felt.ttf", 12);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_Voz, 2);
     _TextBox = Sprite::create("Utils/blueStextbox.png");

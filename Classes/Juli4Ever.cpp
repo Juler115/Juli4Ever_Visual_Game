@@ -81,7 +81,7 @@ bool Juli4Ever::init()
     jugar->setPosition(0, -40);
 
     auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 15);
-    auto musica = MenuItemLabel::create(Musica);
+    auto musica = MenuItemLabel::create(Musica,CC_CALLBACK_1(Juli4Ever::Musica, this));
     musica->setPosition(0, -80);
 
     _MainMenu = Menu::create(hablar,jugar,musica, NULL);
@@ -97,10 +97,14 @@ void Juli4Ever::Hablarrr(Ref* pSender)
     auto Habl = Hablar::createScene();
     Director::getInstance()->replaceScene(Habl);
 }
-
-
+void Juli4Ever::Musica(Ref* pSender)
+{
+    auto Habl = Musica::createScene();
+    Director::getInstance()->replaceScene(Habl);
+}
 void Juli4Ever::menuCloseCallback(Ref* pSender)
 {
 
     Director::getInstance()->end();
 }
+
