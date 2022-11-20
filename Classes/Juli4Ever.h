@@ -85,7 +85,7 @@ public:
     void NosotrosP(cocos2d::Ref* pSender);
     void MiP(cocos2d::Ref* pSender);
     void Volver(cocos2d::Ref* pSender);
-    void VolverT(cocos2d::EventKeyboard::KeyCode keyCode, cocos2d::Event* event);
+    void VolverT();
     CREATE_FUNC(Preguntar);
 
 private:

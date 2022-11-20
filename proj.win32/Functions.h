@@ -57,8 +57,6 @@ string Sirves(int);
 string Pensamientos(int);
 string Nosotros(int);
 string Mi(int);
-void Siento();
-void SientoOp(int);
 string Enojado(int);
 string Triste(int);
 string Feliz(int);
