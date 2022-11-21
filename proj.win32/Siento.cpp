@@ -36,7 +36,7 @@ bool Siento::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
+    
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
@@ -45,7 +45,7 @@ bool Siento::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+    this->addChild(_c, 5);
 
 
     auto Enojado = Label::createWithTTF("Enojado", "fonts/Marker Felt.ttf", 15);
@@ -83,18 +83,19 @@ void Siento::EnojadoP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Enojado(s));
+    _c->setTexture("Juli_sprites/Cabezas/Preocupada por ti.png");
     s = 1;
 
     auto ST1 = EventListenerKeyboard::create();
@@ -107,7 +108,12 @@ void Siento::EnojadoP()
             }
             else {
                 _Voz->setString(Enojado(s));
+                _c->setTexture("Juli_sprites/Cabezas/Nerviosa_boca abierta.png");
                 s++;
+                if (s == EnojadoT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
+                }
             }
         }
     };
@@ -123,19 +129,20 @@ void Siento::TristeP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Triste(s));
     s = 1;
+    _c->setTexture("Juli_sprites/Cabezas/Preocupada por ti.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -147,7 +154,12 @@ void Siento::TristeP()
             }
             else {
                 _Voz->setString(Triste(s));
+                _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
                 s++;
+                if (s == TristeT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
             }
         }
     };
@@ -160,19 +172,19 @@ void Siento::FelizP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Feliz(s));
     s = 1;
+    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -197,19 +209,19 @@ void Siento::AburridoP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Aburrido(s));
     s = 1;
+    _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -222,6 +234,7 @@ void Siento::AburridoP()
             else {
                 _Voz->setString(Aburrido(s));
                 s++;
+                _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
             }
         }
     };
@@ -234,19 +247,20 @@ void Siento::NerviosoP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Nervioso(s));
     s = 1;
+    _c->setTexture("Juli_sprites/Cabezas/Feliz.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -259,6 +273,11 @@ void Siento::NerviosoP()
             else {
                 _Voz->setString(Nervioso(s));
                 s++;
+                _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
+                if (s == TristeT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
             }
         }
     };

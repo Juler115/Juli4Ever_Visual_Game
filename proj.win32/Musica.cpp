@@ -35,16 +35,17 @@ bool Musica::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
-    _l = Sprite::create("Juli_sprites/Poses/1l.png");
-    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_l, 3);
-    _r = Sprite::create("Juli_sprites/Poses/1r.png");
-    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_r, 4);
-    _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+        _l = Sprite::create("Juli_sprites/Poses/3l.png");
+        _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+        _r = Sprite::create("Juli_sprites/Poses/2r.png");
+        _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+        _c = Sprite::create("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
+        _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
+    
+
     int i = 0;
     Vector<MenuItem*> Canciones;
     for (i = 0; i < DatMusic.size()/3; i++)

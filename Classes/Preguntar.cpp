@@ -36,16 +36,28 @@ bool Preguntar::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
-    _l = Sprite::create("Juli_sprites/Poses/1l.png");
-    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_l, 3);
-    _r = Sprite::create("Juli_sprites/Poses/1r.png");
-    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_r, 4);
-    _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+    if (Juli.Afecto() < -1) {
+        _l = Sprite::create("Juli_sprites/Poses/2l.png");
+        _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+        _r = Sprite::create("Juli_sprites/Poses/2r.png");
+        _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+        _c = Sprite::create("Juli_sprites/Cabezas/Molesta.png");
+        _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
+    }
+    else {
+        _l = Sprite::create("Juli_sprites/Poses/1l.png");
+        _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+        _r = Sprite::create("Juli_sprites/Poses/1r.png");
+        _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+        _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
+        _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
+    }
 
 
     auto Quien = Label::createWithTTF("Quien eres?", "fonts/Marker Felt.ttf", 15);
@@ -83,13 +95,14 @@ void Preguntar::EresP(Ref* pSender)
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
+    _c->setTexture("Juli_sprites/Cabezas/Hablando.png");
+
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -108,6 +121,10 @@ void Preguntar::EresP(Ref* pSender)
             else {
                 _Voz->setString(Eres(x));
                 x++;
+                if (x == EresT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
             }
         }
     };
@@ -121,19 +138,21 @@ void Preguntar::SirvesP(Ref* pSender)
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
+    _c->setTexture("Juli_sprites/Cabezas/Hablando.png");
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Sirves(x));
     x = 1;
+
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -146,6 +165,10 @@ void Preguntar::SirvesP(Ref* pSender)
             else {
                 _Voz->setString(Sirves(x));
                 x++;
+                if (x == SirvesT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
             }
         }
     };
@@ -159,13 +182,14 @@ void Preguntar::PensamientosP(Ref* pSender)
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
+    _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -184,6 +208,10 @@ void Preguntar::PensamientosP(Ref* pSender)
             else {
                 _Voz->setString(Pensamientos(x));
                 x++;
+                if (x == PensamientosT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
             }
         }
     };
@@ -197,13 +225,14 @@ void Preguntar::NosotrosP(Ref* pSender)
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
+
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -211,6 +240,7 @@ void Preguntar::NosotrosP(Ref* pSender)
     _Voz->setString(Nosotros(x));
     x = 1;
 
+    _c->setTexture("Juli_sprites/Cabezas/Incomoda.png");
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
@@ -222,6 +252,15 @@ void Preguntar::NosotrosP(Ref* pSender)
             else {
                 _Voz->setString(Nosotros(x));
                 x++;
+                _c->setTexture("Juli_sprites/Cabezas/Hablando.png");
+                if (x == NosotrosT.size())
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
+                }
+                else if (x == NosotrosT.size()-1)
+                {
+                    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
+                }
             }
         }
     };
@@ -234,19 +273,22 @@ void Preguntar::MiP(Ref* pSender)
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
+
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     _Voz->setString(Mi(x));
     x = 1;
+
+    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {

@@ -35,16 +35,28 @@ bool Decir::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
-    _l = Sprite::create("Juli_sprites/Poses/1l.png");
-    _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_l, 3);
-    _r = Sprite::create("Juli_sprites/Poses/1r.png");
-    _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
-    this->addChild(_r, 4);
-    _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
-    _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+    if (Juli.Afecto() < -1) {
+        _l = Sprite::create("Juli_sprites/Poses/2l.png");
+        _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+        _r = Sprite::create("Juli_sprites/Poses/2r.png");
+        _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+        _c = Sprite::create("Juli_sprites/Cabezas/Molesta.png");
+        _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
+    }
+    else {
+        _l = Sprite::create("Juli_sprites/Poses/1l.png");
+        _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_l, 3);
+        _r = Sprite::create("Juli_sprites/Poses/1r.png");
+        _r->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
+        this->addChild(_r, 4);
+        _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
+        _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
+        this->addChild(_c, 5);
+    }
 
     if (Juli.Afecto() >= 4)
     {
@@ -112,19 +124,20 @@ void Decir::GustarP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
 
     if (Juli.Relacion() == false) {
+        _c->setTexture("Juli_sprites/Cabezas/Feliz_Lagrimas_Boca abierta.png");
         _Voz->setString("De verdad?, yo tambien he pensado lo mismo");
         Juli.ActRel(true);
         Modi("Relacion", "1");
@@ -139,6 +152,7 @@ void Decir::GustarP()
         _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
     }
     else {
+        _c->setTexture("Juli_sprites/Cabezas/Sorprendida_boca abierta.png");
         _Voz->setString("A mi tambien me sigues gustando");
         Juli.Afs();
         ACF();
@@ -155,24 +169,24 @@ void Decir::GustarP()
 }
 void Decir::OdiarP()
 {
-    Music("My Feelings");
     auto men = MoveTo::create(0.000001, Vec2(2000, 2000));
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
+
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
     stopMusic();
     if (Juli.Afecto() < 0) {
+        _c->setTexture("Juli_sprites/Cabezas/Enojada_Reprochando.png");
         _Voz->setString("No quiero que me hables");
         Juli.ActRel(false);
         Modi("Relacion", "0");
@@ -188,6 +202,7 @@ void Decir::OdiarP()
         _eventDispatcher->addEventListenerWithSceneGraphPriority(ST1, this);
     }
     else{
+        _c->setTexture("Juli_sprites/Cabezas/Llorando.png");
         _Voz->setString("Eso no es muy lindo "+ Datos["Nombre"]);
         Juli.Afb();
         ACF();
@@ -209,18 +224,19 @@ void Decir::QuererP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
 
+    _c->setTexture("Juli_sprites/Cabezas/Sorprendida_boca abierta.png");
         _Voz->setString("Yo tambien siento que te quiero");
         Juli.Afs();
         ACF();
@@ -239,18 +255,19 @@ void Decir::DisculparP()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
 
+    _c->setTexture("Juli_sprites/Cabezas/llorando_boca abierta.png");
     _Voz->setString("No fue nada lindo lo que dijiste\n pero se que no era tu intencion");
     Juli.AcAf(0);
     ACF();

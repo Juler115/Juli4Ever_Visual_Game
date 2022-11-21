@@ -34,7 +34,6 @@ bool Cambio::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
@@ -43,7 +42,7 @@ bool Cambio::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+    this->addChild(_c, 5);
 
 
     auto Cumple = Label::createWithTTF("Cuando cumples?", "fonts/Marker Felt.ttf", 15);
@@ -90,13 +89,13 @@ void Cambio::Cumple()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -105,6 +104,7 @@ void Cambio::Cumple()
 
     if (Datos["Cumple"] == "")
     {
+        _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
         _Voz->setString("mmm no parece que sepa tu cumpleanos aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
@@ -112,12 +112,13 @@ void Cambio::Cumple()
 
     }
     else {
-
+        _c->setTexture("Juli_sprites/Cabezas/Neutral.png");
         _Voz->setString("Ok parece que cambiaste, entonces");
         auto ST1 = EventListenerKeyboard::create();
         ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
             {
+                _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Que dia cumples ?");
                 auto Input = ui::TextField::create("cumple", "fonts/Marker Felt.ttf", 30);
                 Input->setPosition(Vec2(200, 200));
@@ -130,6 +131,7 @@ void Cambio::Cumple()
                         {
                             string cumple = Input->getString();
                             Modi("Cumple", cumple);
+                            _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                             _Voz->setString("Entendido lo recordare");
                             Input->setPosition(Vec2(1000, 1000));
                             Act();
@@ -153,13 +155,13 @@ void Cambio::FavComi()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -168,6 +170,7 @@ void Cambio::FavComi()
 
     if (Datos["FavComi"] == "")
     {
+        _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
         _Voz->setString("mmm no parece que sepa tu comida favorita aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
@@ -175,12 +178,13 @@ void Cambio::FavComi()
 
     }
     else {
-
+        _c->setTexture("Juli_sprites/Cabezas/Neutral.png");
         _Voz->setString("Ok parece que cambiaste, entonces");
         auto ST1 = EventListenerKeyboard::create();
         ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
             {
+                _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Cual es tu comida Favorita ?");
                 auto Input = ui::TextField::create("FavComi", "fonts/Marker Felt.ttf", 30);
                 Input->setPosition(Vec2(200, 200));
@@ -193,6 +197,7 @@ void Cambio::FavComi()
                         {
                             string FavComi = Input->getString();
                             Modi("FavComi", FavComi);
+                            _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                             _Voz->setString("Entendido lo recordare");
                             Input->setPosition(Vec2(1000, 1000));
                             Act();
@@ -215,13 +220,13 @@ void Cambio::FavPasat()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -230,6 +235,7 @@ void Cambio::FavPasat()
 
     if (Datos["FavPasat"] == "")
     {
+        _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
         _Voz->setString("mmm no parece que sepa tu pasatiempo favorito aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
@@ -237,12 +243,13 @@ void Cambio::FavPasat()
 
     }
     else {
-
+        _c->setTexture("Juli_sprites/Cabezas/Neutral.png");
         _Voz->setString("Ok parece que cambiaste, entonces");
         auto ST1 = EventListenerKeyboard::create();
         ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
             {
+                _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Cual es tu pasatiempo favorito ?");
                 auto Input = ui::TextField::create("FavPasat", "fonts/Marker Felt.ttf", 30);
                 Input->setPosition(Vec2(200, 200));
@@ -255,6 +262,7 @@ void Cambio::FavPasat()
                         {
                             string FavPasat = Input->getString();
                             Modi("FavPasat", FavPasat);
+                            _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                             _Voz->setString("Entendido lo recordare");
                             Input->setPosition(Vec2(1000, 1000));
                             Act();
@@ -277,13 +285,13 @@ void Cambio::Aspiraciones()
     _MainMenu->runAction(men);
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
@@ -292,6 +300,7 @@ void Cambio::Aspiraciones()
 
     if (Datos["Aspiraciones"] == "")
     {
+        _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
         _Voz->setString("mmm no parece que sepa tus aspiraciones aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
@@ -299,12 +308,13 @@ void Cambio::Aspiraciones()
 
     }
     else {
-
+        _c->setTexture("Juli_sprites/Cabezas/Neutral.png");
         _Voz->setString("Ok parece que cambiaste, entonces");
         auto ST1 = EventListenerKeyboard::create();
         ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
             {
+                _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("A que aspiras ?");
                 auto Input = ui::TextField::create("Aspiraciones", "fonts/Marker Felt.ttf", 30);
                 Input->setPosition(Vec2(200, 200));
@@ -317,6 +327,7 @@ void Cambio::Aspiraciones()
                         {
                             string Aspiraciones = Input->getString();
                             Modi("Aspiraciones", Aspiraciones);
+                            _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                             _Voz->setString("Entendido lo recordare");
                             Input->setPosition(Vec2(1000, 1000));
                             Act();

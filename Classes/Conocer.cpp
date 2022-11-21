@@ -35,7 +35,7 @@ bool Conocer::init()
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 1);
 
-    /*
+    
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
     this->addChild(_l, 3);
@@ -44,13 +44,14 @@ bool Conocer::init()
     this->addChild(_r, 4);
     _c = Sprite::create("Juli_sprites/Cabezas/Feliz.png");
     _c->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30 - .15));
-    this->addChild(_c, 5);*/
+    this->addChild(_c, 5);
 
     
     int c=1;
     srand(time(NULL));
     if (Datos["Cumple"] != "" && Datos["FavComi"] != "" && Datos["FavPasat"] != "" && Datos["Aspiraciones"] != "")
     {
+            _c->setTexture("Juli_sprites/Cabezas/Hablando.png");
             _Voz->setString("Conozco suficiente de ti \n te parece si hacemos otra cosa ?");
             auto Return = EventListenerKeyboard::create();
             Return->onKeyPressed = CC_CALLBACK_2(Conocer::VolverT, this);
@@ -90,19 +91,20 @@ void Conocer::Cumple()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     _Voz->setString("Ok es mi turno de preguntar entonces");
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
-    
+    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
+
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
@@ -121,6 +123,7 @@ void Conocer::Cumple()
                         data.open("Data.txt", ios::app);
                         data << "\nCumple " << cumple;
                         data.close();
+                        _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                         _Voz->setString("Entendido lo recordare");
                         Input->setPosition(Vec2(1000,1000));
                         Juli.Afs();
@@ -146,19 +149,19 @@ void Conocer::FavComi()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     _Voz->setString("Ok es mi turno de preguntar entonces");
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
-
+    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
@@ -177,6 +180,7 @@ void Conocer::FavComi()
                         data.open("Data.txt", ios::app);
                         data << "\nFavComi " << FavComi;
                         data.close();
+                        _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                         _Voz->setString("Entendido lo recordare");
                         Input->setPosition(Vec2(1000, 1000));
                         Juli.Afs();
@@ -198,18 +202,18 @@ void Conocer::FavPasat()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     _Voz->setString("Ok es mi turno de preguntar entonces");
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
+    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -229,6 +233,7 @@ void Conocer::FavPasat()
                         data.open("Data.txt", ios::app);
                         data << "\nFavPasat " << FavPasat;
                         data.close();
+                        _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                         _Voz->setString("Entendido lo recordare");
                         Input->setPosition(Vec2(1000, 1000));
                         Juli.Afs();
@@ -250,18 +255,19 @@ void Conocer::Aspiraciones()
 {
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
-    /*
+    
     auto move = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _l->runAction(move);
     auto move2 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30));
     _r->runAction(move2);
     auto move3 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x , visibleSize.height / 2 + origin.y + 30 - .15));
-    _c->runAction(move3);*/
+    _c->runAction(move3);
     auto move4 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _TextBox->runAction(move4);
     _Voz->setString("Ok es mi turno de preguntar entonces");
     auto move5 = MoveTo::create(1, Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
     _Voz->runAction(move5);
+    _c->setTexture("Juli_sprites/Cabezas/Feliz_Boca abierta.png");
 
     auto ST1 = EventListenerKeyboard::create();
     ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -281,6 +287,7 @@ void Conocer::Aspiraciones()
                         data.open("Data.txt", ios::app);
                         data << "\nAspiraciones " << Aspiraciones;
                         data.close();
+                        _c->setTexture("Juli_sprites/Cabezas/MuyFeliz.png");
                         _Voz->setString("Entendido lo recordare");
                         Input->setPosition(Vec2(1000, 1000));
                         Juli.Afs();

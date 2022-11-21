@@ -1,8 +1,8 @@
 
-Afecto 0
+Afecto 5
 Aspiraciones Crear a juli
 Cumple 29/01/2003
-FavComi Tacos
-FavPasat Leer
+FavComi P[izza
+FavPasat 
 Nombre Erwin
-Relacion 0
+Relacion 1
