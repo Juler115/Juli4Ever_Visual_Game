@@ -279,7 +279,7 @@ void Decir::DisculparP()
     _Voz->runAction(move5);
 
     _c->setTexture("Juli_sprites/Cabezas/llorando_boca abierta.png");
-    _Voz->setString("No fue nada lindo lo que dijiste\n pero se que no era tu intencion");
+    _Voz->setString("No fue nada lindo lo que dijiste\n no lo vuelvas a hacer" );
     Juli.AcAf(0);
     ACF();
     auto ST1 = EventListenerKeyboard::create();

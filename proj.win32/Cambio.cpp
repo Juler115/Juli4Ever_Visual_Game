@@ -33,7 +33,7 @@ bool Cambio::init()
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
-    _TextBox->setScale(1.2);
+    _TextBox->setScale(1.3);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
     this->addChild(_TextBox, 7);
 
@@ -113,7 +113,7 @@ void Cambio::Cumple()
     if (Datos["Cumple"] == "")
     {
         _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
-        _Voz->setString("mmm no parece que sepa tu cumpleanos aun \n asi que no puedo cambiarlo");
+        _Voz->setString("mmm no parece que sepa\n tu cumpleanos aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
         _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
@@ -180,7 +180,7 @@ void Cambio::FavComi()
     if (Datos["FavComi"] == "")
     {
         _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
-        _Voz->setString("mmm no parece que sepa tu comida favorita aun \n asi que no puedo cambiarlo");
+        _Voz->setString("mmm no parece que sepa\n tu comida favorita aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
         _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
@@ -246,7 +246,7 @@ void Cambio::FavPasat()
     if (Datos["FavPasat"] == "")
     {
         _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
-        _Voz->setString("mmm no parece que sepa tu pasatiempo favorito aun \n asi que no puedo cambiarlo");
+        _Voz->setString("mmm no parece que sepa\n tu pasatiempo favorito aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
         _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);
@@ -312,7 +312,7 @@ void Cambio::Aspiraciones()
     if (Datos["Aspiraciones"] == "")
     {
         _c->setTexture("Juli_sprites/Cabezas/Preocupada.png");
-        _Voz->setString("mmm no parece que sepa tus aspiraciones aun \n asi que no puedo cambiarlo");
+        _Voz->setString("mmm no parece que sepa\n tus aspiraciones aun \n asi que no puedo cambiarlo");
         auto Return = EventListenerKeyboard::create();
         Return->onKeyPressed = CC_CALLBACK_2(Cambio::VolverT, this);
         _eventDispatcher->addEventListenerWithSceneGraphPriority(Return, this);

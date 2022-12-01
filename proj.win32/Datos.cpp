@@ -24,15 +24,23 @@ bool check()
     else
     {
         dat();
-        string nombre;
-        cout << "Ingresa tu nombre: ";
-        cin >> nombre;
         ofstream data;
         data.open("Data.txt", ios::app);
-        data << "Nombre " << nombre;
         data << "\nAfecto " << 0;
         data << "\nRelacion " << 0;
         data.close();
+        Act();
+        Juli.AcAf(stoi(Datos["Afecto"]));
+        Juli.ActRel(stoi(Datos["Relacion"]));
+        ifstream leer;
+        leer.open("Music.txt", ios::in);
+        string Mus;
+        while (!leer.eof())
+        {
+            getline(leer, Mus);
+            DatMusic.push_back(Mus);
+        }
+        leer.close();
         return 0;
     }
 }
