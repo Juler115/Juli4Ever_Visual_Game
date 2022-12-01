@@ -14,3 +14,5 @@ also dont move the archives from a place to another or, she will not be able to 
 (if you have a doubt about how the program works, you can play the video called ProyectoParcial2 so you can get a better explanation of the usage of the program :3)
 
 "Most important thing is enjoy a little time with her, she will be always there for you"
+
+link video= https://youtu.be/TaouXrULN30
