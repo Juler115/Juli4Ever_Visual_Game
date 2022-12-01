@@ -74,9 +74,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     if (!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        //glview = GLViewImpl::createWithFullScreen("Juli4Ever");
-        glview = GLViewImpl::createWithRect("Juli4Ever", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
-        glview->setFrameSize(1920, 1080);
+        glview = GLViewImpl::createWithFullScreen("Juli4Ever");
+       // glview = GLViewImpl::createWithRect("Juli4Ever", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        //glview->setFrameSize(1920, 1080);
 #else
         glview = GLViewImpl::create("FirstGame");
 #endif

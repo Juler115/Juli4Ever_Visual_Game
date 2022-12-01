@@ -17,6 +17,6 @@ string Bienvenida() {
 	}
 	else
 	{
-		return "No estoy tan feliz como crees despues de lo que dijiste >:c";
+		return "No estoy tan feliz como crees despues de lo que dijiste";
 	}
 }

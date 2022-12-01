@@ -41,7 +41,7 @@ static void problemLoading(const char* filename)
 
 bool Juli4Ever::init()
 {
-    check();
+    Act();
 
     if (!Scene::init())
     {
@@ -53,13 +53,16 @@ bool Juli4Ever::init()
 
     auto back = Sprite::create("Utils/daylight_Background.png");
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
+    back->setScale(1.3);
     this->addChild(back, 0);
-    _Voz = Label::createWithTTF("Que quieres hacer ahora?", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("Que quieres hacer ahora?", "fonts/ComicRelief.ttf", 12);
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     if (Juli.Afecto() < -1) {
         _l = Sprite::create("Juli_sprites/Poses/2l.png");
@@ -85,20 +88,28 @@ bool Juli4Ever::init()
     }
 
 
-    auto Hablar = Label::createWithTTF("Hablar", "fonts/Marker Felt.ttf", 15);
+    auto Hablar = Label::createWithTTF("Hablar", "fonts/ComicRelief.ttf", 20);
+    Hablar->enableGlow(Color4B::BLACK);
     auto hablar = MenuItemLabel::create(Hablar, CC_CALLBACK_1(Juli4Ever::Hablarrr, this));
     hablar->setPosition(0, 0);
 
-    auto Jugar = Label::createWithTTF("Jugar", "fonts/Marker Felt.ttf", 15);
-    auto jugar = MenuItemLabel::create(Jugar);
+    auto Jugar = Label::createWithTTF("Jugar", "fonts/ComicRelief.ttf", 20);
+    Jugar->enableGlow(Color4B::BLACK);
+    auto jugar = MenuItemLabel::create(Jugar, CC_CALLBACK_1(Juli4Ever::Jugar, this));
     jugar->setPosition(0, -40);
 
-    auto Musica = Label::createWithTTF("Musica", "fonts/Marker Felt.ttf", 15);
+    auto Musica = Label::createWithTTF("Musica", "fonts/ComicRelief.ttf", 20);
+    Musica->enableGlow(Color4B::BLACK);
     auto musica = MenuItemLabel::create(Musica,CC_CALLBACK_1(Juli4Ever::Musica, this));
     musica->setPosition(0, -80);
 
-    _MainMenu = Menu::create(hablar,jugar,musica, NULL);
-    _MainMenu->setPosition(200,200);
+    auto Salir = Label::createWithTTF("Salir", "fonts/ComicRelief.ttf", 20);
+    Salir->enableGlow(Color4B::BLACK);
+    auto salir = MenuItemLabel::create(Salir, CC_CALLBACK_1(Juli4Ever::menuCloseCallback, this));
+    salir->setPosition(0, -120);
+
+    _MainMenu = Menu::create(hablar,jugar,musica, salir,NULL);
+    _MainMenu->setPosition(175,225);
     this->addChild(_MainMenu, 6);
         
 
@@ -113,6 +124,11 @@ void Juli4Ever::Hablarrr(Ref* pSender)
 void Juli4Ever::Musica(Ref* pSender)
 {
     auto Habl = Musica::createScene();
+    Director::getInstance()->replaceScene(Habl);
+}
+void Juli4Ever::Jugar(Ref* pSender)
+{
+    auto Habl = Jugar::createScene();
     Director::getInstance()->replaceScene(Habl);
 }
 void Juli4Ever::menuCloseCallback(Ref* pSender)

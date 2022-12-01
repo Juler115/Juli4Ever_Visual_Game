@@ -17,7 +17,7 @@ static void problemLoading(const char* filename)
 
 bool Conocer::init()
 {
-    check();
+    Act();
     if (!Scene::init())
     {
         return false;
@@ -25,15 +25,18 @@ bool Conocer::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setScale(1.3);
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("", "fonts/ComicRelief.ttf", 12);
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
@@ -110,8 +113,9 @@ void Conocer::Cumple()
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
         {
             _Voz->setString("Que dia cumples ?");
-            auto Input = ui::TextField::create("cumple", "fonts/Marker Felt.ttf", 30);
-            Input->setPosition(Vec2(200, 200));
+            auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+            Input->setPosition(Vec2(100, 200));
+            Input->setColor(Color3B(0, 255, 255));
             this->addChild(Input, 10);
             auto ST2 = EventListenerKeyboard::create();
             ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -167,8 +171,9 @@ void Conocer::FavComi()
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
         {
             _Voz->setString("Cual es tu comida favorita ?");
-            auto Input = ui::TextField::create("FavComi", "fonts/Marker Felt.ttf", 30);
-            Input->setPosition(Vec2(200, 200));
+            auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+            Input->setColor(Color3B(0, 255, 255));
+            Input->setPosition(Vec2(100, 200));
             this->addChild(Input, 10);
             auto ST2 = EventListenerKeyboard::create();
             ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -220,8 +225,9 @@ void Conocer::FavPasat()
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
         {
             _Voz->setString("Cual es tu pasatiempo favorito?");
-            auto Input = ui::TextField::create("FavPasat", "fonts/Marker Felt.ttf", 30);
-            Input->setPosition(Vec2(200, 200));
+            auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+            Input->setPosition(Vec2(100, 200));
+            Input->setColor(Color3B(0, 255, 255));
             this->addChild(Input, 10);
             auto ST2 = EventListenerKeyboard::create();
             ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -274,8 +280,9 @@ void Conocer::Aspiraciones()
         if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
         {
             _Voz->setString("Cuales son tus aspiraciones?");
-            auto Input = ui::TextField::create("Aspiraciones", "fonts/Marker Felt.ttf", 30);
-            Input->setPosition(Vec2(200, 200));
+            auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+            Input->setPosition(Vec2(100, 200));
+            Input->setColor(Color3B(0, 255, 255));
             this->addChild(Input, 10);
             auto ST2 = EventListenerKeyboard::create();
             ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {

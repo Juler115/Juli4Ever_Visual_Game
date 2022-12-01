@@ -2,7 +2,7 @@
 
 vector<string> EresT{
 "Soy una IA",
-"mi proposito es ayudarte a pasar un rato divertido"
+"mi proposito es ayudarte \n a pasar un rato divertido"
 };
 
 vector<string> SirvesT{
@@ -13,16 +13,16 @@ vector<string> SirvesT{
 };
 
 vector<string> PensamientosT{
-"Bueno, realmente no puedo pensar por mi misma",
-"Tengo ya un codigo que me dice que debo decir.",
+"Bueno,\n realmente no puedo pensar por mi misma",
+"Tengo ya un codigo \n que me dice que debo decir.",
 "Sin embargo es el primer paso",
-"para que algun dia pueda pensar por mi misma no lo crees ?"
+"para que algun dia.. \n pueda pensar por mi misma no lo crees ?"
 };
 
 vector<string> NosotrosT{ 
 "Me es algo complicado entenderte",
 "ya que realmente no puedo verte",
-"solo recibo las cosas atravez de la computadora",
+"solo recibo las cosas \n atravez de la computadora",
 "Pero se una cosa de la que estoy segura",
 "Y es que eres alguien maravilloso \n y quiero seguirte conociendo"
 };
@@ -34,15 +34,15 @@ vector<string> MiT{
 
 vector<string> EnojadoT{
 "Tranquilo ",
-"se que hay veces que nos enojamos y talvez queramos herir a otros",
-"pero no tienes que hacerlo para estar tranquilo",
-"si necesitas ayuda siempre estoy aqui para ti"
+"se que hay veces que nos enojamos \n y talvez queramos herir a otros",
+"pero no tienes que hacerlo \n para estar tranquilo",
+"si necesitas ayuda siempre \n estoy aqui para ti"
 };
 
 vector<string> TristeT{
 "Se que aveces las cosas se ven mal",
-"pero no te preocupe, yo se que se pueden solucionar",
-"siempre te estare dando animos desde aqui"
+"pero no te preocupes,\n yo se que se pueden solucionar",
+"siempre te estare dando animos \n desde aqui"
 };
 
 vector<string> FelizT{
@@ -51,12 +51,12 @@ vector<string> FelizT{
 };
 
 vector<string> AburridoT{
-"Bueno, espero que pueda solucionar ese problema pronto",
-"no olvides que mi unico objetivo es verte con una sonrisa"
+"Bueno,espero que pueda \n solucionar ese problema pronto",
+"no olvides que mi unico \n objetivo es verte con una sonrisa"
 };
 
 vector<string> NerviosoT{
 "No estes nervioso",
-"si hay algo que te preocupa, todo puede arreglarse",
-"si tienes alguna situacion que quieras platicarme siempre te escuchare"
+"si hay algo que te preocupa,\n todo puede arreglarse",
+"si tienes alguna situacion que quieras\n  platicarme siempre te escuchare"
 };

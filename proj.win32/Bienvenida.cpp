@@ -27,16 +27,19 @@ bool BienvenidaS::init()
 
 
     auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setScale(1.3);
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("Hello World", "fonts/ComicRelief.ttf", 12);
     _Voz->setString(Bienvenida());
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     if (Juli.Afecto() < -1) {
         _l = Sprite::create("Juli_sprites/Poses/2l.png");

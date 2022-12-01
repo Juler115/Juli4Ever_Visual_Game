@@ -16,7 +16,7 @@ static void problemLoading(const char* filename)
 
 bool Cambio::init()
 {
-    check();
+    Act();
     if (!Scene::init())
     {
         return false;
@@ -24,15 +24,18 @@ bool Cambio::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setScale(1.3);
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("", "fonts/ComicRelief.ttf", 12);
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
     _l->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y + 30));
@@ -45,24 +48,29 @@ bool Cambio::init()
     this->addChild(_c, 5);
 
 
-    auto Cumple = Label::createWithTTF("Cuando cumples?", "fonts/Marker Felt.ttf", 15);
+    auto Cumple = Label::createWithTTF("Cuando cumples?", "fonts/ComicRelief.ttf", 15);
+    Cumple->enableGlow(Color4B::BLACK);
     auto cumple = MenuItemLabel::create(Cumple, CC_CALLBACK_0(Cambio::Cumple, this));
     cumple->setPosition(0, 0);
-    auto FavComi = Label::createWithTTF("Cual es tu comida favorita?", "fonts/Marker Felt.ttf", 15);
+    auto FavComi = Label::createWithTTF("Cual es tu comida favorita?", "fonts/ComicRelief.ttf", 15);
+    FavComi->enableGlow(Color4B::BLACK);
     auto favComi = MenuItemLabel::create(FavComi, CC_CALLBACK_0(Cambio::FavComi, this));
-    favComi->setPosition(0, -20);
-    auto FavPasat = Label::createWithTTF("Cual es tu pasatiempo favorito?", "fonts/Marker Felt.ttf", 15);
+    favComi->setPosition(0, -30);
+    auto FavPasat = Label::createWithTTF("Cual es tu pasatiempo favorito?", "fonts/ComicRelief.ttf", 15);
+    FavPasat->enableGlow(Color4B::BLACK);
     auto favPasat = MenuItemLabel::create(FavPasat, CC_CALLBACK_0(Cambio::FavPasat, this));
-    favPasat->setPosition(0, -40);
-    auto Aspiraciones = Label::createWithTTF("A que aspiras?", "fonts/Marker Felt.ttf", 15);
+    favPasat->setPosition(0, -60);
+    auto Aspiraciones = Label::createWithTTF("A que aspiras?", "fonts/ComicRelief.ttf", 15);
+    Aspiraciones->enableGlow(Color4B::BLACK);
     auto aspiraciones = MenuItemLabel::create(Aspiraciones, CC_CALLBACK_0(Cambio::Aspiraciones, this));
-    aspiraciones->setPosition(0, -60);
-    auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+    aspiraciones->setPosition(0, -90);
+    auto Volver = Label::createWithTTF("Volver", "fonts/ComicRelief.ttf", 15);
+    Volver->enableGlow(Color4B::BLACK);
     auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_0(Cambio::Volver, this));
-    volver->setPosition(0, -80);
+    volver->setPosition(0, -120);
 
     _MainMenu = Menu::create(cumple, favComi, favPasat, aspiraciones, volver, NULL);
-    _MainMenu->setPosition(200, 200);
+    _MainMenu->setPosition(175, 225);
     this->addChild(_MainMenu, 6);
 
 
@@ -120,8 +128,9 @@ void Cambio::Cumple()
             {
                 _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Que dia cumples ?");
-                auto Input = ui::TextField::create("cumple", "fonts/Marker Felt.ttf", 30);
-                Input->setPosition(Vec2(200, 200));
+                auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+                Input->setPosition(Vec2(100, 200));
+                Input->setColor(Color3B(0, 255, 255));
                 this->addChild(Input, 10);
                 auto ST2 = EventListenerKeyboard::create();
                 ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -186,8 +195,9 @@ void Cambio::FavComi()
             {
                 _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Cual es tu comida Favorita ?");
-                auto Input = ui::TextField::create("FavComi", "fonts/Marker Felt.ttf", 30);
-                Input->setPosition(Vec2(200, 200));
+                auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+                Input->setPosition(Vec2(100, 200));
+                Input->setColor(Color3B(0, 255, 255));
                 this->addChild(Input, 10);
                 auto ST2 = EventListenerKeyboard::create();
                 ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -251,8 +261,9 @@ void Cambio::FavPasat()
             {
                 _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("Cual es tu pasatiempo favorito ?");
-                auto Input = ui::TextField::create("FavPasat", "fonts/Marker Felt.ttf", 30);
-                Input->setPosition(Vec2(200, 200));
+                auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+                Input->setPosition(Vec2(100, 200));
+                Input->setColor(Color3B(0,255,255));
                 this->addChild(Input, 10);
                 auto ST2 = EventListenerKeyboard::create();
                 ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
@@ -316,8 +327,9 @@ void Cambio::Aspiraciones()
             {
                 _c->setTexture("Juli_sprites/Cabezas/Nerviosa_mirando aun lado.png");
                 _Voz->setString("A que aspiras ?");
-                auto Input = ui::TextField::create("Aspiraciones", "fonts/Marker Felt.ttf", 30);
-                Input->setPosition(Vec2(200, 200));
+                auto Input = ui::TextField::create("___", "fonts/ComicRelief.ttf", 30);
+                Input->setPosition(Vec2(100, 200));
+                Input->setColor(Color3B(0, 255, 255));
                 this->addChild(Input, 10);
                 auto ST2 = EventListenerKeyboard::create();
                 ST2->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {

@@ -16,7 +16,7 @@ static void problemLoading(const char* filename)
 
 bool Decir::init()
 {
-    check();
+    Act();
     log("%d", Juli.Afecto());
     if (!Scene::init())
     {
@@ -25,15 +25,18 @@ bool Decir::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setScale(1.3);
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("Te escucho", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("Te escucho", "fonts/ComicRelief.ttf", 12);
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     if (Juli.Afecto() < -1) {
         _l = Sprite::create("Juli_sprites/Poses/2l.png");
@@ -60,18 +63,21 @@ bool Decir::init()
 
     if (Juli.Afecto() >= 4)
     {
-        auto Gustar = Label::createWithTTF("Me gustas", "fonts/Marker Felt.ttf", 15);
+        auto Gustar = Label::createWithTTF("Me gustas", "fonts/ComicRelief.ttf", 15);
+        Gustar->enableGlow(Color4B::BLACK);
         auto gustar = MenuItemLabel::create(Gustar, CC_CALLBACK_0(Decir::GustarP, this));
         gustar->setPosition(0, 0);
-        auto Odiar = Label::createWithTTF("Te odio", "fonts/Marker Felt.ttf", 15);
+        auto Odiar = Label::createWithTTF("Te odio", "fonts/ComicRelief.ttf", 15);
+        Odiar->enableGlow(Color4B::BLACK);
         auto odiar = MenuItemLabel::create(Odiar, CC_CALLBACK_0(Decir::OdiarP, this));
-        odiar->setPosition(0, -20);
-        auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+        odiar->setPosition(0, -30);
+        auto Volver = Label::createWithTTF("Volver", "fonts/ComicRelief.ttf", 15);
+        Volver->enableGlow(Color4B::BLACK);
         auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_0(Decir::Volver, this));
-        volver->setPosition(0, -40);
+        volver->setPosition(0, -60);
 
         _MainMenu = Menu::create(gustar, odiar, volver, NULL);
-        _MainMenu->setPosition(200, 200);
+        _MainMenu->setPosition(175, 225);
         this->addChild(_MainMenu, 6);
     }
     else if (Juli.Afecto() < -1)
@@ -81,15 +87,17 @@ bool Decir::init()
         ST1->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event) {
             if (keyCode == EventKeyboard::KeyCode::KEY_ENTER)
             {
-                auto Disculpa = Label::createWithTTF("Lamento lo que dije", "fonts/Marker Felt.ttf", 15);
+                auto Disculpa = Label::createWithTTF("Lamento lo que dije", "fonts/ComicRelief.ttf", 15);
+                Disculpa->enableGlow(Color4B::BLACK);
                 auto disculpa = MenuItemLabel::create(Disculpa, CC_CALLBACK_0(Decir::DisculparP, this));
                 disculpa->setPosition(0, 0);
-                auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+                auto Volver = Label::createWithTTF("Volver", "fonts/ComicRelief.ttf", 15);
+                Volver->enableGlow(Color4B::BLACK);
                 auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_0(Decir::Volver, this));
-                volver->setPosition(0, -20);
+                volver->setPosition(0, -30);
 
                 _MainMenu = Menu::create(disculpa, volver, NULL);
-                _MainMenu->setPosition(200, 200);
+                _MainMenu->setPosition(175, 225);
                 this->addChild(_MainMenu, 6);
             }
            
@@ -98,18 +106,21 @@ bool Decir::init()
 
     }
     else {
-        auto Querer = Label::createWithTTF("Te quiero", "fonts/Marker Felt.ttf", 15);
+        auto Querer = Label::createWithTTF("Te quiero", "fonts/ComicRelief.ttf", 15);
+        Querer->enableGlow(Color4B::BLACK);
         auto querer = MenuItemLabel::create(Querer, CC_CALLBACK_0(Decir::QuererP, this));
         querer->setPosition(0, 0);
-        auto Odiar = Label::createWithTTF("Te odio", "fonts/Marker Felt.ttf", 15);
+        auto Odiar = Label::createWithTTF("Te odio", "fonts/ComicRelief.ttf", 15);
+        Odiar->enableGlow(Color4B::BLACK);
         auto odiar = MenuItemLabel::create(Odiar, CC_CALLBACK_0(Decir::OdiarP, this));
-        odiar->setPosition(0, -20);
-        auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+        odiar->setPosition(0, -30);
+        auto Volver = Label::createWithTTF("Volver", "fonts/ComicRelief.ttf", 15);
+        Volver->enableGlow(Color4B::BLACK);
         auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_0(Decir::Volver, this));
-        volver->setPosition(0, -40);
+        volver->setPosition(0, -60);
 
         _MainMenu = Menu::create(querer, odiar, volver, NULL);
-        _MainMenu->setPosition(200, 200);
+        _MainMenu->setPosition(175, 225);
         this->addChild(_MainMenu, 6);
     }
 
@@ -138,7 +149,7 @@ void Decir::GustarP()
 
     if (Juli.Relacion() == false) {
         _c->setTexture("Juli_sprites/Cabezas/Feliz_Lagrimas_Boca abierta.png");
-        _Voz->setString("De verdad?, yo tambien he pensado lo mismo");
+        _Voz->setString("De verdad?, yo tambien \n he pensado lo mismo");
         Juli.ActRel(true);
         Modi("Relacion", "1");
         ACF();

@@ -18,7 +18,7 @@ static void problemLoading(const char* filename)
 
 bool Siento::init()
 {
-    check();
+    Act();
     if (!Scene::init())
     {
         return false;
@@ -26,15 +26,18 @@ bool Siento::init()
     auto visibleSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
     auto back = Sprite::create("Utils/daylight_Background.png");
+    back->setScale(1.3);
     back->setPosition(Vec2(visibleSize.width / 2 + origin.x, visibleSize.height / 2 + origin.y));
     this->addChild(back, 0);
 
-    _Voz = Label::createWithTTF("Como te sientes hoy?", "fonts/Marker Felt.ttf", 12);
+    _Voz = Label::createWithTTF("Como te sientes hoy?", "fonts/ComicRelief.ttf", 12);
+    _Voz->enableGlow(Color4B::BLACK);
     _Voz->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_Voz, 2);
+    this->addChild(_Voz, 8);
     _TextBox = Sprite::create("Utils/blueStextbox.png");
+    _TextBox->setScale(1.2);
     _TextBox->setPosition(Vec2(visibleSize.width / 2 + origin.x + 100, visibleSize.height / 2 + origin.y - 100));
-    this->addChild(_TextBox, 1);
+    this->addChild(_TextBox, 7);
 
     
     _l = Sprite::create("Juli_sprites/Poses/1l.png");
@@ -48,28 +51,34 @@ bool Siento::init()
     this->addChild(_c, 5);
 
 
-    auto Enojado = Label::createWithTTF("Enojado", "fonts/Marker Felt.ttf", 15);
+    auto Enojado = Label::createWithTTF("Enojado", "fonts/ComicRelief.ttf", 15);
+    Enojado->enableGlow(Color4B::BLACK);
     auto enojado = MenuItemLabel::create(Enojado, CC_CALLBACK_0(Siento::EnojadoP, this));
     enojado->setPosition(0, 0);
-    auto Triste = Label::createWithTTF("Triste", "fonts/Marker Felt.ttf", 15);
+    auto Triste = Label::createWithTTF("Triste", "fonts/ComicRelief.ttf", 15);
+    Triste->enableGlow(Color4B::BLACK);
     auto triste = MenuItemLabel::create(Triste, CC_CALLBACK_0(Siento::TristeP, this));
-    triste->setPosition(0, -20);
-    auto Feliz = Label::createWithTTF("Feliz", "fonts/Marker Felt.ttf", 15);
+    triste->setPosition(0, -30);
+    auto Feliz = Label::createWithTTF("Feliz", "fonts/ComicRelief.ttf", 15);
+    Feliz->enableGlow(Color4B::BLACK);
     auto feliz = MenuItemLabel::create(Feliz, CC_CALLBACK_0(Siento::FelizP, this));
-    feliz->setPosition(0, -40);
-    auto Aburrido = Label::createWithTTF("Aburrido", "fonts/Marker Felt.ttf", 15);
+    feliz->setPosition(0, -60);
+    auto Aburrido = Label::createWithTTF("Aburrido", "fonts/ComicRelief.ttf", 15);
+    Aburrido->enableGlow(Color4B::BLACK);
     auto aburrido = MenuItemLabel::create(Aburrido, CC_CALLBACK_0(Siento::AburridoP, this));
-    aburrido->setPosition(0, -60);
-    auto Nervioso = Label::createWithTTF("Nervioso", "fonts/Marker Felt.ttf", 15);
+    aburrido->setPosition(0, -90);
+    auto Nervioso = Label::createWithTTF("Nervioso", "fonts/ComicRelief.ttf", 15);
+    Nervioso->enableGlow(Color4B::BLACK);
     auto nervioso = MenuItemLabel::create(Nervioso, CC_CALLBACK_0(Siento::NerviosoP, this));
-    nervioso->setPosition(0, -80);
-    auto Volver = Label::createWithTTF("Volver", "fonts/Marker Felt.ttf", 15);
+    nervioso->setPosition(0, -120);
+    auto Volver = Label::createWithTTF("Volver", "fonts/ComicRelief.ttf", 15);
+    Volver->enableGlow(Color4B::BLACK);
     auto volver = MenuItemLabel::create(Volver, CC_CALLBACK_0(Siento::Volver, this));
-    volver->setPosition(0, -100);
+    volver->setPosition(0, -150);
 
 
     _MainMenu = Menu::create(enojado, triste, feliz, aburrido, nervioso, volver, NULL);
-    _MainMenu->setPosition(200, 200);
+    _MainMenu->setPosition(175, 250);
     this->addChild(_MainMenu, 6);
 
     return true;
